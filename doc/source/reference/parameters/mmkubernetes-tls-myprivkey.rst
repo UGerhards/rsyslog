@@ -10,7 +10,7 @@ tls.myPrivKey
 
 .. summary-start
 
-Specifies the unencrypted private key corresponding to ``tls.mycert``.
+Specifies the unencrypted private key corresponding to ``tls.myCert``.
 
 .. summary-end
 

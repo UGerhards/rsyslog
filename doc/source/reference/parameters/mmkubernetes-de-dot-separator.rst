@@ -10,7 +10,7 @@ deDotSeparator
 
 .. summary-start
 
-Defines the string used to replace dots when ``de_dot`` is enabled.
+Defines the string used to replace dots when ``deDot`` is enabled.
 
 .. summary-end
 
