@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-cacheentryttl:
 .. _mmkubernetes.parameter.action.cacheentryttl:
 
-cacheentryttl
+cacheEntryTtl
 =============
 
 .. index::
-   single: mmkubernetes; cacheentryttl
-   single: cacheentryttl
+   single: mmkubernetes; cacheEntryTtl
+   single: cacheEntryTtl
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Sets the maximum age of entries in the metadata cache.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: cacheentryttl
+:Name: cacheEntryTtl
 :Scope: action
 :Type: integer
 :Default: 3600

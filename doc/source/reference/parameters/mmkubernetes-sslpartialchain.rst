@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-sslpartialchain:
 .. _mmkubernetes.parameter.action.sslpartialchain:
 
-sslpartialchain
+sslPartialChain
 ===============
 
 .. index::
-   single: mmkubernetes; sslpartialchain
-   single: sslpartialchain
+   single: mmkubernetes; sslPartialChain
+   single: sslPartialChain
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Enables OpenSSL ``X509_V_FLAG_PARTIAL_CHAIN`` verification.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: sslpartialchain
+:Name: sslPartialChain
 :Scope: action
 :Type: boolean
 :Default: off
@@ -35,7 +35,7 @@ If `"on"`, this will set the OpenSSL certificate store flag
 server cert with only an intermediate CA cert in your local trust store, rather
 than having to have the entire intermediate CA + root CA chain in your local
 trust store.  See also `man s_client` - the `-partial_chain` flag.
-If you get errors like this, you probably need to set `sslpartialchain="on"`:
+If you get errors like this, you probably need to set `sslPartialChain="on"`:
 
 .. code-block:: none
 

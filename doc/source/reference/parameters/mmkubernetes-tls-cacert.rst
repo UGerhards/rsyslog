@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-tls-cacert:
 .. _mmkubernetes.parameter.action.tls-cacert:
 
-tls.cacert
+tls.caCert
 ==========
 
 .. index::
-   single: mmkubernetes; tls.cacert
-   single: tls.cacert
+   single: mmkubernetes; tls.caCert
+   single: tls.caCert
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the CA certificate used to verify the Kubernetes API server.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: tls.cacert
+:Name: tls.caCert
 :Scope: action
 :Type: word
 :Default: none

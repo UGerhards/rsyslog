@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-tls-mycert:
 .. _mmkubernetes.parameter.action.tls-mycert:
 
-tls.mycert
+tls.myCert
 ==========
 
 .. index::
-   single: mmkubernetes; tls.mycert
-   single: tls.mycert
+   single: mmkubernetes; tls.myCert
+   single: tls.myCert
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the client certificate for authenticating to Kubernetes.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: tls.mycert
+:Name: tls.myCert
 :Scope: action
 :Type: word
 :Default: none

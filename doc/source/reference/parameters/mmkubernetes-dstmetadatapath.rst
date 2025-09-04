@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-dstmetadatapath:
 .. _mmkubernetes.parameter.action.dstmetadatapath:
 
-dstmetadatapath
+dstMetadataPath
 ===============
 
 .. index::
-   single: mmkubernetes; dstmetadatapath
-   single: dstmetadatapath
+   single: mmkubernetes; dstMetadataPath
+   single: dstMetadataPath
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Defines where the ``kubernetes`` and ``docker`` properties are written.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: dstmetadatapath
+:Name: dstMetadataPath
 :Scope: action
 :Type: word
 :Default: $!

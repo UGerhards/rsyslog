@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-de-dot-separator:
 .. _mmkubernetes.parameter.action.de-dot-separator:
 
-de_dot_separator
-================
+deDotSeparator
+===============
 
 .. index::
-   single: mmkubernetes; de_dot_separator
-   single: de_dot_separator
+   single: mmkubernetes; deDotSeparator
+   single: deDotSeparator
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Defines the string used to replace dots when ``de_dot`` is enabled.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: de_dot_separator
+:Name: deDotSeparator
 :Scope: action
 :Type: word
 :Default: _

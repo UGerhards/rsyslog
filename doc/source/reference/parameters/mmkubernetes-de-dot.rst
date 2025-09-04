@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-de-dot:
 .. _mmkubernetes.parameter.action.de-dot:
 
-de_dot
-======
+deDot
+=====
 
 .. index::
-   single: mmkubernetes; de_dot
-   single: de_dot
+   single: mmkubernetes; deDot
+   single: deDot
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Replaces dots in annotation and label keys.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: de_dot
+:Name: deDot
 :Scope: action
 :Type: boolean
 :Default: on

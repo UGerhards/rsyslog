@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-annotation-match:
 .. _mmkubernetes.parameter.action.annotation-match:
 
-annotation_match
-================
+annotationMatch
+===============
 
 .. index::
-   single: mmkubernetes; annotation_match
-   single: annotation_match
+   single: mmkubernetes; annotationMatch
+   single: annotationMatch
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Selects pod or namespace annotations whose keys match given patterns.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: annotation_match
+:Name: annotationMatch
 :Scope: action
 :Type: array
 :Default: none

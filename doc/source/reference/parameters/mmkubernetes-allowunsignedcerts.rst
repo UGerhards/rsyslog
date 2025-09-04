@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-allowunsignedcerts:
 .. _mmkubernetes.parameter.action.allowunsignedcerts:
 
-allowunsignedcerts
+allowUnsignedCerts
 ==================
 
 .. index::
-   single: mmkubernetes; allowunsignedcerts
-   single: allowunsignedcerts
+   single: mmkubernetes; allowUnsignedCerts
+   single: allowUnsignedCerts
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Disables TLS peer certificate verification.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: allowunsignedcerts
+:Name: allowUnsignedCerts
 :Scope: action
 :Type: boolean
 :Default: off

@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-tls-myprivkey:
 .. _mmkubernetes.parameter.action.tls-myprivkey:
 
-tls.myprivkey
+tls.myPrivKey
 =============
 
 .. index::
-   single: mmkubernetes; tls.myprivkey
-   single: tls.myprivkey
+   single: mmkubernetes; tls.myPrivKey
+   single: tls.myPrivKey
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the unencrypted private key corresponding to ``tls.mycert``.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: tls.myprivkey
+:Name: tls.myPrivKey
 :Scope: action
 :Type: word
 :Default: none

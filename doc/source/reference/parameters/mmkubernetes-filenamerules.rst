@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-filenamerules:
 .. _mmkubernetes.parameter.action.filenamerules:
 
-filenamerules
+fileNameRules
 =============
 
 .. index::
-   single: mmkubernetes; filenamerules
-   single: filenamerules
+   single: mmkubernetes; fileNameRules
+   single: fileNameRules
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Defines lognorm rules to parse json-file log filenames for metadata.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: filenamerules
+:Name: fileNameRules
 :Scope: action
 :Type: word
 :Default: SEE BELOW
@@ -47,7 +47,7 @@ Action usage
 
 .. code-block:: rsyslog
 
-   action(type="mmkubernetes" filenameRules="...")
+   action(type="mmkubernetes" fileNameRules="...")
 
 See also
 --------

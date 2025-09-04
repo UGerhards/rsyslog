@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-busyretryinterval:
 .. _mmkubernetes.parameter.action.busyretryinterval:
 
-busyretryinterval
+busyRetryInterval
 =================
 
 .. index::
-   single: mmkubernetes; busyretryinterval
-   single: busyretryinterval
+   single: mmkubernetes; busyRetryInterval
+   single: busyRetryInterval
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Sets the delay before retrying after a ``429 Busy`` response.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: busyretryinterval
+:Name: busyRetryInterval
 :Scope: action
 :Type: integer
 :Default: 5
@@ -33,7 +33,7 @@ will need to handle cases where some of your records have all of the metadata
 and some do not.
 
 If you want to have rsyslog suspend the plugin until the Kubernetes API server
-is available, set `busyretryinterval` to `"0"`.  This will cause the plugin to
+is available, set `busyRetryInterval` to `"0"`.  This will cause the plugin to
 return an error to rsyslog.
 
 Action usage

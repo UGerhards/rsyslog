@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-containerrules:
 .. _mmkubernetes.parameter.action.containerrules:
 
-containerrules
+containerRules
 ==============
 
 .. index::
-   single: mmkubernetes; containerrules
-   single: containerrules
+   single: mmkubernetes; containerRules
+   single: containerRules
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Defines lognorm rules to parse ``CONTAINER_NAME`` values for metadata.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: containerrules
+:Name: containerRules
 :Scope: action
 :Type: word
 :Default: SEE BELOW

@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-skipverifyhost:
 .. _mmkubernetes.parameter.action.skipverifyhost:
 
-skipverifyhost
+skipVerifyHost
 ==============
 
 .. index::
-   single: mmkubernetes; skipverifyhost
-   single: skipverifyhost
+   single: mmkubernetes; skipVerifyHost
+   single: skipVerifyHost
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Skips verification of the Kubernetes API server hostname.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: skipverifyhost
+:Name: skipVerifyHost
 :Scope: action
 :Type: boolean
 :Default: off

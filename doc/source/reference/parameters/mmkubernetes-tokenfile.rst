@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-tokenfile:
 .. _mmkubernetes.parameter.action.tokenfile:
 
-tokenfile
+tokenFile
 =========
 
 .. index::
-   single: mmkubernetes; tokenfile
-   single: tokenfile
+   single: mmkubernetes; tokenFile
+   single: tokenFile
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Reads the authentication token from the specified file.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: tokenfile
+:Name: tokenFile
 :Scope: action
 :Type: word
 :Default: none
@@ -26,7 +26,7 @@ This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 Description
 -----------
 The file containing the token to use to authenticate to the Kubernetes API
-server.  One of `tokenfile` or :ref:`param-mmkubernetes-token` is required if Kubernetes is configured
+server.  One of `tokenFile` or :ref:`param-mmkubernetes-token` is required if Kubernetes is configured
 with access control.  Example: `/etc/rsyslog.d/mmk8s.token`
 
 Action usage

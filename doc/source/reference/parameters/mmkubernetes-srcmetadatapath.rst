@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-srcmetadatapath:
 .. _mmkubernetes.parameter.action.srcmetadatapath:
 
-srcmetadatapath
+srcMetadataPath
 ===============
 
 .. index::
-   single: mmkubernetes; srcmetadatapath
-   single: srcmetadatapath
+   single: mmkubernetes; srcMetadataPath
+   single: srcMetadataPath
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the message property containing the original filename.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: srcmetadatapath
+:Name: srcMetadataPath
 :Scope: action
 :Type: word
 :Default: $!metadata!filename

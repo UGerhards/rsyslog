@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-containerrulebase:
 .. _mmkubernetes.parameter.action.containerrulebase:
 
-containerrulebase
+containerRuleBase
 =================
 
 .. index::
-   single: mmkubernetes; containerrulebase
-   single: containerrulebase
+   single: mmkubernetes; containerRuleBase
+   single: containerRuleBase
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the rulebase file used to parse ``CONTAINER_NAME`` values.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: containerrulebase
+:Name: containerRuleBase
 :Scope: action
 :Type: word
 :Default: /etc/rsyslog.d/k8s_container_name.rulebase

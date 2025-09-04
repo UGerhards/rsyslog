@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-filenamerulebase:
 .. _mmkubernetes.parameter.action.filenamerulebase:
 
-filenamerulebase
+fileNameRuleBase
 ================
 
 .. index::
-   single: mmkubernetes; filenamerulebase
-   single: filenamerulebase
+   single: mmkubernetes; fileNameRuleBase
+   single: fileNameRuleBase
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the rulebase file used to match json-file log filenames.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: filenamerulebase
+:Name: fileNameRuleBase
 :Scope: action
 :Type: word
 :Default: /etc/rsyslog.d/k8s_filename.rulebase
@@ -36,7 +36,7 @@ Action usage
 
 .. code-block:: rsyslog
 
-   action(type="mmkubernetes" filenameRuleBase="/etc/rsyslog.d/k8s_filename.rulebase")
+   action(type="mmkubernetes" fileNameRuleBase="/etc/rsyslog.d/k8s_filename.rulebase")
 
 See also
 --------

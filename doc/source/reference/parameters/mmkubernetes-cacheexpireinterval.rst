@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-cacheexpireinterval:
 .. _mmkubernetes.parameter.action.cacheexpireinterval:
 
-cacheexpireinterval
+cacheExpireInterval
 ===================
 
 .. index::
-   single: mmkubernetes; cacheexpireinterval
-   single: cacheexpireinterval
+   single: mmkubernetes; cacheExpireInterval
+   single: cacheExpireInterval
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Controls how often to check for expired metadata cache entries.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: cacheexpireinterval
+:Name: cacheExpireInterval
 :Scope: action
 :Type: integer
 :Default: -1
@@ -38,9 +38,9 @@ The cache is only checked if processing a record from Kubernetes.  There
 isn't some sort of housekeeping thread that continually runs cleaning up
 the cache.  When an record from Kubernetes is processed:
 
-If `cacheexpireinterval` is -1, then do not check for cache expiration.
-If `cacheexpireinterval` is 0, then check for cache expiration.
-If `cacheexpireinterval` is greater than 0, check for cache expiration
+If `cacheExpireInterval` is -1, then do not check for cache expiration.
+If `cacheExpireInterval` is 0, then check for cache expiration.
+If `cacheExpireInterval` is greater than 0, check for cache expiration
 if the last time we checked was more than this many seconds ago.
 
 When cache expiration is checked, it will delete all cache entries which

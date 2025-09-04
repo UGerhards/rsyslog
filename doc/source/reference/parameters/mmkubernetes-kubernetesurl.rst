@@ -1,12 +1,12 @@
 .. _param-mmkubernetes-kubernetesurl:
 .. _mmkubernetes.parameter.action.kubernetesurl:
 
-KubernetesURL
+kubernetesUrl
 =============
 
 .. index::
-   single: mmkubernetes; KubernetesURL
-   single: KubernetesURL
+   single: mmkubernetes; kubernetesUrl
+   single: kubernetesUrl
 
 .. summary-start
 
@@ -16,7 +16,7 @@ Specifies the URL of the Kubernetes API server.
 
 This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
 
-:Name: KubernetesURL
+:Name: kubernetesUrl
 :Scope: action
 :Type: word
 :Default: https://kubernetes.default.svc.cluster.local:443
