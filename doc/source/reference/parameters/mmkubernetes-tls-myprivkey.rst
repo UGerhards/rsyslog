@@ -1,0 +1,44 @@
+.. _param-mmkubernetes-tls-myprivkey:
+.. _mmkubernetes.parameter.action.tls-myprivkey:
+
+tls.myPrivKey
+=============
+
+.. index::
+   single: mmkubernetes; tls.myPrivKey
+   single: tls.myPrivKey
+
+.. summary-start
+
+Specifies the unencrypted private key corresponding to ``tls.myCert``.
+
+.. summary-end
+
+This parameter applies to :doc:`../../configuration/modules/mmkubernetes`.
+
+:Name: tls.myPrivKey
+:Scope: action
+:Type: word
+:Default: none
+:Required?: no
+:Introduced: at least 8.x, possibly earlier
+
+Description
+-----------
+This is the full path and file name of the file containing the private key
+corresponding to the cert :ref:`param-mmkubernetes-tls-mycert` used for doing client cert auth against
+Kubernetes.  This file is in PEM format, and must be unencrypted, so take
+care to secure it properly.  For example: `/etc/rsyslog.d/k8s-client-key.pem`
+
+Action usage
+------------
+.. _param-mmkubernetes-action-tls-myprivkey:
+.. _mmkubernetes.parameter.action.tls-myprivkey-usage:
+
+.. code-block:: rsyslog
+
+   action(type="mmkubernetes" tls.myPrivKey="/etc/rsyslog.d/k8s-client-key.pem")
+
+See also
+--------
+See also :doc:`../../configuration/modules/mmkubernetes`.
