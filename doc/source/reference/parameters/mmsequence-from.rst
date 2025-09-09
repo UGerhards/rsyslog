@@ -29,7 +29,7 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 Description
 -----------
-Starting value for counters and lower margin for random generator. This value
+Starting value for counters and lower margin for random numbers. This value
 is inclusive and must be a non-negative integer.
 
 Action usage
