@@ -30,9 +30,10 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 Description
 -----------
 Increment for counters. It must be a non-negative integer. If step is ``0``,
-it can be used to fetch current value without modification. The latter does not
-apply to ``random`` mode. This is useful in ``key`` mode or to get constant
-values in ``instance`` mode.
+it can fetch the current value without modification. The latter does not apply
+to ``random`` :ref:`mode <param-mmsequence-mode>`. This is useful in ``key``
+:ref:`mode <param-mmsequence-mode>` or to get constant values in ``instance``
+:ref:`mode <param-mmsequence-mode>`.
 
 Action usage
 ------------
