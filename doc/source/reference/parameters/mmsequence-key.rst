@@ -1,5 +1,9 @@
 .. _param-mmsequence-key:
-.. _mmsequence.parameter.module.key:
+.. _mmsequence.parameter.action.key:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:key
 
 key
 ===
@@ -10,28 +14,28 @@ key
 
 .. summary-start
 
-Names the global counter shared between multiple action instances.
+Names the counter shared between multiple action instances.
 
 .. summary-end
 
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: key
-:Scope: module
+:Scope: action
 :Type: string
-:Default: module=
+:Default: none
 :Required?: no
 :Introduced: 7.5.6
 
 Description
 -----------
-Name of the global counter which is used in this action. This must be a single
-word (a string without spaces).
+Name of the global counter used in this action.
+It must be a single word (a string without spaces).
 
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-key:
-.. _mmsequence.parameter.module.key-usage:
+.. _param-mmsequence-action-key:
+.. _mmsequence.parameter.action.key-usage:
 
 .. code-block:: rsyslog
 

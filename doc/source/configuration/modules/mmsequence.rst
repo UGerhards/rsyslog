@@ -33,9 +33,10 @@ Configuration Parameters
 
 .. note::
 
-   Parameter names are case-insensitive; camelCase is recommended for readability.
+   Parameter names are case-insensitive; camelCase is recommended for
+   readability.
 
-Module Parameters
+Action Parameters
 -----------------
 
 .. list-table::

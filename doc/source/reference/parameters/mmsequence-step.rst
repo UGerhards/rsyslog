@@ -1,5 +1,9 @@
 .. _param-mmsequence-step:
-.. _mmsequence.parameter.module.step:
+.. _mmsequence.parameter.action.step:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:step
 
 step
 ====
@@ -10,16 +14,16 @@ step
 
 .. summary-start
 
-Specifies the increment for counters; ``0`` fetches the current value without changing it.
+Specifies the counter increment; a value of ``0`` fetches the current value.
 
 .. summary-end
 
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: step
-:Scope: module
+:Scope: action
 :Type: integer
-:Default: module=1
+:Default: 1
 :Required?: no
 :Introduced: 7.5.6
 
@@ -30,10 +34,10 @@ it can be used to fetch current value without modification. The latter does not
 apply to ``random`` mode. This is useful in ``key`` mode or to get constant
 values in ``instance`` mode.
 
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-step:
-.. _mmsequence.parameter.module.step-usage:
+.. _param-mmsequence-action-step:
+.. _mmsequence.parameter.action.step-usage:
 
 .. code-block:: rsyslog
 

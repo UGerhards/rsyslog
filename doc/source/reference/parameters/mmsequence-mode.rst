@@ -1,5 +1,9 @@
 .. _param-mmsequence-mode:
-.. _mmsequence.parameter.module.mode:
+.. _mmsequence.parameter.action.mode:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:mode
 
 mode
 ====
@@ -10,31 +14,32 @@ mode
 
 .. summary-start
 
-Selects the sequence generation mode: random numbers, per-action counter, or shared counter.
+Selects the mode: random numbers, per-action counter, or shared counter.
 
 .. summary-end
 
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: mode
-:Scope: module
+:Scope: action
 :Type: string
-:Default: module=instance
+:Default: instance
 :Required?: no
 :Introduced: 7.5.6
 
 Description
 -----------
-Specifies mode of the action. In ``random`` mode, the module generates uniformly distributed integer numbers in a range defined by ``from`` and ``to``.
+Specifies mode of the action. In ``random`` mode, the module generates
+uniformly distributed integers within the range defined by ``from`` and ``to``.
+In ``instance`` mode, which is the default, the action produces a counter
+in the range [``from``, ``to``). This counter is specific to the action.
+In ``key`` mode, the counter can be shared between multiple instances.
+The counter is identified by a name defined with the ``key`` parameter.
 
-In ``instance`` mode, which is default, the action produces a counter in range [``from``, ``to``). This counter is specific to this action instance.
-
-In ``key`` mode, the counter can be shared between multiple instances. This counter is identified by a name, which is defined with ``key`` parameter.
-
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-mode:
-.. _mmsequence.parameter.module.mode-usage:
+.. _param-mmsequence-action-mode:
+.. _mmsequence.parameter.action.mode-usage:
 
 .. code-block:: rsyslog
 

@@ -1,5 +1,9 @@
 .. _param-mmsequence-var:
-.. _mmsequence.parameter.module.var:
+.. _mmsequence.parameter.action.var:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:var
 
 var
 ===
@@ -17,21 +21,21 @@ Specifies the variable where the generated number will be stored.
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: var
-:Scope: module
+:Scope: action
 :Type: string
-:Default: module=``$!mmsequence``
+:Default: ``$!mmsequence``
 :Required?: no
 :Introduced: 7.5.6
 
 Description
 -----------
-Name of the variable where the number will be stored. It must be a single word
-and should start with ``$``.
+Name of the variable where the number will be stored.
+It must be a single word and should start with ``$``.
 
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-var:
-.. _mmsequence.parameter.module.var-usage:
+.. _param-mmsequence-action-var:
+.. _mmsequence.parameter.action.var-usage:
 
 .. code-block:: rsyslog
 

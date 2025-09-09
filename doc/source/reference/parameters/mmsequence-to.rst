@@ -1,5 +1,9 @@
 .. _param-mmsequence-to:
-.. _mmsequence.parameter.module.to:
+.. _mmsequence.parameter.action.to:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:to
 
 to
 ==
@@ -10,29 +14,29 @@ to
 
 .. summary-start
 
-Sets the upper margin for sequences; the counter resets when reaching or exceeding this value.
+Sets the upper margin for sequences. The counter resets on reaching this value.
 
 .. summary-end
 
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: to
-:Scope: module
+:Scope: action
 :Type: integer
-:Default: module=``INT_MAX``
+:Default: ``INT_MAX``
 :Required?: no
 :Introduced: 7.5.6
 
 Description
 -----------
-Upper margin for all sequences, which must be a positive integer. Note that
-this margin is not inclusive. When next value for a counter is equal or greater
-than this parameter, the counter resets to the starting value.
+Upper margin for all sequences, which must be a positive integer.
+This margin is not inclusive. When the next value for a counter is equal
+or greater than this parameter, the counter resets to the starting value.
 
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-to:
-.. _mmsequence.parameter.module.to-usage:
+.. _param-mmsequence-action-to:
+.. _mmsequence.parameter.action.to-usage:
 
 .. code-block:: rsyslog
 

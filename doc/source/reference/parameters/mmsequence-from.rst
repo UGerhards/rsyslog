@@ -1,5 +1,9 @@
 .. _param-mmsequence-from:
-.. _mmsequence.parameter.module.from:
+.. _mmsequence.parameter.action.from:
+
+.. meta::
+   :tag: module:mmsequence
+   :tag: parameter:from
 
 from
 ====
@@ -10,16 +14,16 @@ from
 
 .. summary-start
 
-Sets the starting value for counters and the lower margin for random numbers.
+Sets the start value for counters and the lower margin for random numbers.
 
 .. summary-end
 
 This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 :Name: from
-:Scope: module
+:Scope: action
 :Type: integer
-:Default: module=0
+:Default: 0
 :Required?: no
 :Introduced: 7.5.6
 
@@ -28,10 +32,10 @@ Description
 Starting value for counters and lower margin for random generator. This must
 be a non-negative integer.
 
-Module usage
+Action usage
 ------------
-.. _param-mmsequence-module-from:
-.. _mmsequence.parameter.module.from-usage:
+.. _param-mmsequence-action-from:
+.. _mmsequence.parameter.action.from-usage:
 
 .. code-block:: rsyslog
 
