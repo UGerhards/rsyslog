@@ -25,7 +25,8 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 Description
 -----------
-Starting value for counters and lower margin for random generator.
+Starting value for counters and lower margin for random generator. This must
+be a non-negative integer.
 
 Module usage
 ------------

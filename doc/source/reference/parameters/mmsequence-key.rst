@@ -25,7 +25,8 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 Description
 -----------
-Name of the global counter which is used in this action.
+Name of the global counter which is used in this action. This must be a single
+word (a string without spaces).
 
 Module usage
 ------------

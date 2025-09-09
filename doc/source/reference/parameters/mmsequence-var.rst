@@ -19,13 +19,14 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 :Name: var
 :Scope: module
 :Type: string
-:Default: module=$!mmsequence
+:Default: module=``$!mmsequence``
 :Required?: no
 :Introduced: 7.5.6
 
 Description
 -----------
-Name of the variable where the number will be stored. Should start with ``$``.
+Name of the variable where the number will be stored. It must be a single word
+and should start with ``$``.
 
 Module usage
 ------------
