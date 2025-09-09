@@ -61,8 +61,8 @@ Configuration Parameters
 .. toctree::
    :hidden:
 
-   ../../reference/parameters/mmkubernetes-annotation-match
    ../../reference/parameters/mmkubernetes-allowunsignedcerts
+   ../../reference/parameters/mmkubernetes-annotation-match
    ../../reference/parameters/mmkubernetes-busyretryinterval
    ../../reference/parameters/mmkubernetes-cacheentryttl
    ../../reference/parameters/mmkubernetes-cacheexpireinterval
@@ -92,12 +92,12 @@ Action Parameters
 
    * - Parameter
      - Summary
-   * - :ref:`param-mmkubernetes-annotation-match`
-     - .. include:: ../../reference/parameters/mmkubernetes-annotation-match.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
    * - :ref:`param-mmkubernetes-allowunsignedcerts`
      - .. include:: ../../reference/parameters/mmkubernetes-allowunsignedcerts.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmkubernetes-annotation-match`
+     - .. include:: ../../reference/parameters/mmkubernetes-annotation-match.rst
         :start-after: .. summary-start
         :end-before: .. summary-end
    * - :ref:`param-mmkubernetes-busyretryinterval`
