@@ -23,7 +23,7 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 :Name: key
 :Scope: action
 :Type: string
-:Default: none
+:Default: ""
 :Required?: no
 :Introduced: 7.5.6
 
