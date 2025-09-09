@@ -28,51 +28,56 @@ random numbers in a given range.
 This module is implemented via the output module interface, so it is
 called just as an action. The number generated is stored in a variable.
 
- 
+Configuration Parameters
+========================
 
-**Action Parameters**:
+.. note::
 
-Note: parameter names are case-insensitive.
+   Parameter names are case-insensitive; camelCase is recommended for readability.
 
--  **mode** "random" or "instance" or "key"
+Module Parameters
+-----------------
 
-   Specifies mode of the action. In "random" mode, the module generates
-   uniformly distributed integer numbers in a range defined by "from"
-   and "to".
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-   In "instance" mode, which is default, the action produces a counter
-   in range [from, to). This counter is specific to this action
-   instance.
+   * - Parameter
+     - Summary
+   * - :ref:`param-mmsequence-mode`
+     - .. include:: ../../reference/parameters/mmsequence-mode.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmsequence-from`
+     - .. include:: ../../reference/parameters/mmsequence-from.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmsequence-to`
+     - .. include:: ../../reference/parameters/mmsequence-to.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmsequence-step`
+     - .. include:: ../../reference/parameters/mmsequence-step.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmsequence-key`
+     - .. include:: ../../reference/parameters/mmsequence-key.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-mmsequence-var`
+     - .. include:: ../../reference/parameters/mmsequence-var.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
 
-   In "key" mode, the counter can be shared between multiple instances.
-   This counter is identified by a name, which is defined with "key"
-   parameter.
+.. toctree::
+   :hidden:
 
--  **from** [non-negative integer], default "0"
-
-   Starting value for counters and lower margin for random generator.
-
--  **to** [positive integer], default "INT\_MAX"
-
-   Upper margin for all sequences. Note that this margin is not
-   inclusive. When next value for a counter is equal or greater than
-   this parameter, the counter resets to the starting value.
-
--  **step** [non-negative integer], default "1"
-
-   Increment for counters. If step is "0", it can be used to fetch
-   current value without modification. The latter not applies to
-   "random" mode. This is useful in "key" mode or to get constant values
-   in "instance" mode.
-
--  **key** [word], default ""
-
-   Name of the global counter which is used in this action.
-
--  **var** [word], default "$!mmsequence"
-
-   Name of the variable where the number will be stored. Should start
-   with "$".
+   ../../reference/parameters/mmsequence-mode
+   ../../reference/parameters/mmsequence-from
+   ../../reference/parameters/mmsequence-to
+   ../../reference/parameters/mmsequence-step
+   ../../reference/parameters/mmsequence-key
+   ../../reference/parameters/mmsequence-var
 
 **Sample**:
 
