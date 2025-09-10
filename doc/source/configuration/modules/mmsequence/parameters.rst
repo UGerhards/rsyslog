@@ -45,14 +45,19 @@ This parameter applies to :doc:`../mmsequence`.
 
 Description
 ~~~~~~~~~~~
-Specifies mode of the action. In ``random`` mode, the module generates
-uniformly distributed integers in the range
-[:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`). In
-``instance`` mode, which is the default, the action produces a counter
-in the range [:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`).
-This counter is specific to the action. In ``key`` mode, the counter can
-be shared between multiple instances. The counter is identified by a
-name defined with the :ref:`param-mmsequence-key` parameter.
+Specifies the operational mode of the action.
+
+* **random**
+  Generates uniformly distributed integers in the range
+  [:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`).
+* **instance** (default)
+  Produces a counter in the range
+  [:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`). This
+  counter is specific to this action instance.
+* **key**
+  Produces a counter that can be shared between multiple action
+  instances. The shared counter is identified by a name defined with the
+  :ref:`param-mmsequence-key` parameter.
 
 Action usage
 ~~~~~~~~~~~~
@@ -191,10 +196,14 @@ This parameter applies to :doc:`../mmsequence`.
 
 Description
 ~~~~~~~~~~~
-Increment for counters. It must be a non-negative integer. If step is ``0``,
-it can fetch the current value without modification. The latter does not apply
-to ``random`` :ref:`mode <param-mmsequence-mode>`. This is useful in ``key`` mode
-or to get constant values in ``instance`` mode.
+Specifies the increment for counters. It must be a non-negative integer.
+
+A ``step`` of ``0`` can be used to fetch the current value of a counter
+without modifying it. This is useful in ``key`` mode or to get constant
+values in ``instance`` mode.
+
+This behavior does not apply when the :ref:`mode <param-mmsequence-mode>` is
+``random``.
 
 Action usage
 ~~~~~~~~~~~~
