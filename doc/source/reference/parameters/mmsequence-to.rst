@@ -23,7 +23,7 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 :Name: to
 :Scope: action
 :Type: integer
-:Default: ``INT_MAX``
+:Default: ``INT_MAX`` (max signed integer, typically 2147483647)
 :Required?: no
 :Introduced: 7.5.6
 

@@ -30,7 +30,7 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 Description
 -----------
 Name of the variable where the number will be stored.
-It must be a single word and should start with ``$``.
+It must be a single word and must start with ``$``.
 
 Action usage
 ------------

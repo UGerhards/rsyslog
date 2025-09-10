@@ -30,13 +30,13 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 Description
 -----------
 Specifies mode of the action. In ``random`` mode, the module generates
-uniformly distributed integers within the range defined by
-:ref:`param-mmsequence-from` and :ref:`param-mmsequence-to`.
-In ``instance`` mode, which is the default, the action produces a counter
-in the range [:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`).
+uniformly distributed integers in the range
+[:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`). In
+``instance`` mode, which is the default, the action produces a counter in
+the range [:ref:`param-mmsequence-from`, :ref:`param-mmsequence-to`).
 This counter is specific to the action.
-In ``key`` mode, the counter can be shared between multiple instances. The
-counter is identified by a name defined with the
+In ``key`` mode, the counter can be shared between multiple instances.
+The counter is identified by a name defined with the
 :ref:`param-mmsequence-key` parameter.
 
 Action usage
