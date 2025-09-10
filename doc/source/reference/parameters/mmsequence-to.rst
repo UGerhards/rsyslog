@@ -30,8 +30,9 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 Description
 -----------
 Upper margin for all sequences, which must be a positive integer.
-This margin is not inclusive. When the next value for a counter is equal
-or greater than this parameter, the counter resets to the starting value.
+This margin is not inclusive. When the next value for a counter is equal or
+greater than this parameter, it resets to the :ref:`param-mmsequence-from`
+value.
 
 Action usage
 ------------

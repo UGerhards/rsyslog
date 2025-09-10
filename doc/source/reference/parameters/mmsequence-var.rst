@@ -29,8 +29,8 @@ This parameter applies to :doc:`../../configuration/modules/mmsequence`.
 
 Description
 -----------
-Name of the variable where the number will be stored.
-It must be a single word and must start with ``$``.
+Name of the variable where the number will be stored. It must be a single
+word, start with ``$``, and be at least 3 characters long.
 
 Action usage
 ------------
