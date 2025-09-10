@@ -193,9 +193,8 @@ Description
 -----------
 Increment for counters. It must be a non-negative integer. If step is ``0``,
 it can fetch the current value without modification. The latter does not apply
-to ``random`` :ref:`mode <param-mmsequence-mode>`. This is useful in ``key``
-:ref:`mode <param-mmsequence-mode>` or to get constant values in ``instance``
-:ref:`mode <param-mmsequence-mode>`.
+to ``random`` :ref:`mode <param-mmsequence-mode>`. This is useful in ``key`` mode
+or to get constant values in ``instance`` mode.
 
 Action usage
 ------------
