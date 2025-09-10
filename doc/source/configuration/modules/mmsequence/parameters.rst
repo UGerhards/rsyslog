@@ -20,7 +20,7 @@ Action Parameters
    :tag: parameter:mode
 
 mode
-====
+----
 
 .. index::
    single: mmsequence; mode
@@ -72,7 +72,7 @@ Action usage
    :tag: parameter:from
 
 from
-====
+----
 
 .. index::
    single: mmsequence; from
@@ -118,7 +118,7 @@ Action usage
    :tag: parameter:to
 
 to
-==
+----
 
 .. index::
    single: mmsequence; to
@@ -166,7 +166,7 @@ Action usage
    :tag: parameter:step
 
 step
-====
+----
 
 .. index::
    single: mmsequence; step
@@ -215,7 +215,7 @@ Action usage
    :tag: parameter:key
 
 key
-===
+----
 
 .. index::
    single: mmsequence; key
@@ -261,7 +261,7 @@ Action usage
    :tag: parameter:var
 
 var
-===
+----
 
 .. index::
    single: mmsequence; var
@@ -300,4 +300,4 @@ Action usage
 
 See also
 --------
-See also :doc:`../mmsequence`.
+For more information, see :doc:`../mmsequence`.
