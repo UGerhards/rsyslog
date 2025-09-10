@@ -46,39 +46,34 @@ Action Parameters
    * - Parameter
      - Summary
    * - :ref:`param-mmsequence-mode`
-     - .. include:: ../../reference/parameters/mmsequence-mode.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-mode-summary-start
+        :end-before: .. mmsequence-mode-summary-end
    * - :ref:`param-mmsequence-from`
-     - .. include:: ../../reference/parameters/mmsequence-from.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-from-summary-start
+        :end-before: .. mmsequence-from-summary-end
    * - :ref:`param-mmsequence-to`
-     - .. include:: ../../reference/parameters/mmsequence-to.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-to-summary-start
+        :end-before: .. mmsequence-to-summary-end
    * - :ref:`param-mmsequence-step`
-     - .. include:: ../../reference/parameters/mmsequence-step.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-step-summary-start
+        :end-before: .. mmsequence-step-summary-end
    * - :ref:`param-mmsequence-key`
-     - .. include:: ../../reference/parameters/mmsequence-key.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-key-summary-start
+        :end-before: .. mmsequence-key-summary-end
    * - :ref:`param-mmsequence-var`
-     - .. include:: ../../reference/parameters/mmsequence-var.rst
-        :start-after: .. summary-start
-        :end-before: .. summary-end
+     - .. include:: mmsequence/parameters.rst
+        :start-after: .. mmsequence-var-summary-start
+        :end-before: .. mmsequence-var-summary-end
 
 .. toctree::
    :hidden:
 
-   ../../reference/parameters/mmsequence-mode
-   ../../reference/parameters/mmsequence-from
-   ../../reference/parameters/mmsequence-to
-   ../../reference/parameters/mmsequence-step
-   ../../reference/parameters/mmsequence-key
-   ../../reference/parameters/mmsequence-var
+   mmsequence/parameters
 
 **Sample**:
 
