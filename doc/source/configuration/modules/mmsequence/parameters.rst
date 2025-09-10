@@ -7,11 +7,6 @@
 Action Parameters
 =================
 
-.. note::
-
-   Parameter names are case-insensitive; camelCase is recommended for readability.
-
-
 .. _param-mmsequence-mode:
 .. _mmsequence.parameter.action.mode:
 
@@ -20,7 +15,7 @@ Action Parameters
    :tag: parameter:mode
 
 mode
-----
+~~~~
 
 .. index::
    single: mmsequence; mode
@@ -77,7 +72,7 @@ Action usage
    :tag: parameter:from
 
 from
-----
+~~~~
 
 .. index::
    single: mmsequence; from
@@ -123,7 +118,7 @@ Action usage
    :tag: parameter:to
 
 to
-----
+~~
 
 .. index::
    single: mmsequence; to
@@ -171,7 +166,7 @@ Action usage
    :tag: parameter:step
 
 step
-----
+~~~~
 
 .. index::
    single: mmsequence; step
@@ -180,7 +175,7 @@ step
 .. mmsequence-step-summary-start
 .. summary-start
 
-Specifies the counter increment; a value of ``0`` fetches the current value.
+Sets counter increment; ``0`` fetches current value except in ``random`` mode.
 
 .. summary-end
 .. mmsequence-step-summary-end
@@ -223,7 +218,7 @@ Action usage
    :tag: parameter:key
 
 key
-----
+~~~
 
 .. index::
    single: mmsequence; key
@@ -269,7 +264,7 @@ Action usage
    :tag: parameter:var
 
 var
-----
+~~~
 
 .. index::
    single: mmsequence; var
@@ -306,6 +301,3 @@ Action usage
 
    action(type="mmsequence" var="$!seq")
 
-See also
---------
-For more information, see :doc:`../mmsequence`.
