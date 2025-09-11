@@ -238,7 +238,7 @@ This parameter applies to :doc:`../mmsequence`.
 :Name: key
 :Scope: action
 :Type: string
-:Default: ""
+:Default: ``""``
 :Required?: no
 :Introduced: 7.5.6
 
