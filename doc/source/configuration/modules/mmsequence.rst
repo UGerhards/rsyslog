@@ -29,7 +29,7 @@ This module is implemented via the output module interface, so it is
 called just as an action. The number generated is stored in a variable.
 
 Configuration Parameters
-========================
+------------------------
 
 .. note::
 

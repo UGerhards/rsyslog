@@ -39,7 +39,7 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Specifies the operational mode of the action.
 
 * **random**
@@ -55,7 +55,7 @@ Specifies the operational mode of the action.
   :ref:`param-mmsequence-key` parameter.
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-mode:
 .. _mmsequence.parameter.action.mode-usage:
 
@@ -96,12 +96,12 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Starting value for counters and lower margin for random numbers. This value
 is inclusive and must be a non-negative integer.
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-from:
 .. _mmsequence.parameter.action.from-usage:
 
@@ -142,7 +142,7 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Upper margin for all sequences, which must be a positive integer.
 The value of ``to`` must be greater than the :ref:`param-mmsequence-from`
 value. This margin is not inclusive. When the next value for a counter is
@@ -150,7 +150,7 @@ equal or greater than this parameter, it resets to the
 :ref:`param-mmsequence-from` value.
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-to:
 .. _mmsequence.parameter.action.to-usage:
 
@@ -191,7 +191,7 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Specifies the increment for counters. It must be a non-negative integer.
 
 A ``step`` of ``0`` can be used to fetch the current value of a counter
@@ -202,7 +202,7 @@ This behavior does not apply when the :ref:`mode <param-mmsequence-mode>` is
 ``random``.
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-step:
 .. _mmsequence.parameter.action.step-usage:
 
@@ -243,12 +243,12 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Name of the global counter used in this action.
 It must be a single word (a string without spaces).
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-key:
 .. _mmsequence.parameter.action.key-usage:
 
@@ -289,12 +289,12 @@ This parameter applies to :doc:`../mmsequence`.
 :Introduced: 7.5.6
 
 Description
-~~~~~~~~~~~
+^^^^^^^^^^^
 Name of the variable where the number will be stored. It must be a single
 word, start with ``$``, and be at least 3 characters long.
 
 Action usage
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 .. _param-mmsequence-action-var:
 .. _mmsequence.parameter.action.var-usage:
 
