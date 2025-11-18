@@ -1,5 +1,5 @@
 .. _param-omlibdbi-uid:
-.. _omlibdbi.parameter.action.uid:
+.. _omlibdbi.parameter.input.uid:
 
 UID
 ===
@@ -17,9 +17,9 @@ Defines the user name that omlibdbi uses when authenticating to the database.
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: UID
-:Scope: action
+:Scope: input
 :Type: word
-:Default: action=none
+:Default: input=none
 :Required?: yes
 :Introduced: Not documented
 
@@ -28,10 +28,10 @@ Description
 Provide the account that has permission to write into the target
 database. Combine this with ``PWD`` to supply the password.
 
-Action usage
-------------
-.. _param-omlibdbi-action-uid-usage:
-.. _omlibdbi.parameter.action.uid-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-uid-usage:
+.. _omlibdbi.parameter.input.uid-usage:
 
 .. code-block:: rsyslog
 

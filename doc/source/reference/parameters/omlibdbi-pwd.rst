@@ -1,5 +1,5 @@
 .. _param-omlibdbi-pwd:
-.. _omlibdbi.parameter.action.pwd:
+.. _omlibdbi.parameter.input.pwd:
 
 PWD
 ===
@@ -17,9 +17,9 @@ Sets the password for the database user defined via ``UID``.
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: PWD
-:Scope: action
+:Scope: input
 :Type: word
-:Default: action=none
+:Default: input=none
 :Required?: yes
 :Introduced: Not documented
 
@@ -28,10 +28,10 @@ Description
 Supply the password that matches the user provided through the ``UID``
 parameter so omlibdbi can authenticate to the database.
 
-Action usage
-------------
-.. _param-omlibdbi-action-pwd-usage:
-.. _omlibdbi.parameter.action.pwd-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-pwd-usage:
+.. _omlibdbi.parameter.input.pwd-usage:
 
 .. code-block:: rsyslog
 

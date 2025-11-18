@@ -1,5 +1,5 @@
 .. _param-omlibdbi-driver:
-.. _omlibdbi.parameter.action.driver:
+.. _omlibdbi.parameter.input.driver:
 
 Driver
 ======
@@ -17,9 +17,9 @@ Selects the libdbi driver backend to use for this action.
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: Driver
-:Scope: action
+:Scope: input
 :Type: word
-:Default: action=none
+:Default: input=none
 :Required?: yes
 :Introduced: Not documented
 
@@ -38,10 +38,10 @@ documented by libdbi-drivers. Common values include:
 - ``freetds`` (Microsoft SQL and Sybase)
 - ``pgsql`` (:doc:`ompgsql` is recommended instead)
 
-Action usage
-------------
-.. _param-omlibdbi-action-driver-usage:
-.. _omlibdbi.parameter.action.driver-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-driver-usage:
+.. _omlibdbi.parameter.input.driver-usage:
 
 .. code-block:: rsyslog
 

@@ -1,5 +1,5 @@
 .. _param-omlibdbi-server:
-.. _omlibdbi.parameter.action.server:
+.. _omlibdbi.parameter.input.server:
 
 Server
 ======
@@ -17,9 +17,9 @@ Specifies the hostname or address of the database server to connect to.
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: Server
-:Scope: action
+:Scope: input
 :Type: word
-:Default: action=none
+:Default: input=none
 :Required?: yes
 :Introduced: Not documented
 
@@ -29,10 +29,10 @@ Use this to point omlibdbi at the host that runs the selected database
 engine. Combine it with the driver, credentials, and database name to
 form the full connection information.
 
-Action usage
-------------
-.. _param-omlibdbi-action-server-usage:
-.. _omlibdbi.parameter.action.server-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-server-usage:
+.. _omlibdbi.parameter.input.server-usage:
 
 .. code-block:: rsyslog
 

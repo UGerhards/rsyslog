@@ -1,5 +1,5 @@
 .. _param-omlibdbi-db:
-.. _omlibdbi.parameter.action.db:
+.. _omlibdbi.parameter.input.db:
 
 DB
 ==
@@ -17,9 +17,9 @@ Names the database schema that omlibdbi writes to.
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: DB
-:Scope: action
+:Scope: input
 :Type: word
-:Default: action=none
+:Default: input=none
 :Required?: yes
 :Introduced: Not documented
 
@@ -29,10 +29,10 @@ Set this to the database instance that should receive the syslog events.
 It must exist on the selected server and accept the credentials supplied
 via ``UID`` and ``PWD``.
 
-Action usage
-------------
-.. _param-omlibdbi-action-db-usage:
-.. _omlibdbi.parameter.action.db-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-db-usage:
+.. _omlibdbi.parameter.input.db-usage:
 
 .. code-block:: rsyslog
 

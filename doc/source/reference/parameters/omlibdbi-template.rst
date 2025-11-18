@@ -1,6 +1,6 @@
 .. _param-omlibdbi-template:
 .. _omlibdbi.parameter.module.template:
-.. _omlibdbi.parameter.action.template:
+.. _omlibdbi.parameter.input.template:
 
 Template
 ========
@@ -18,9 +18,9 @@ Defines the template used to render records, either globally for the module or f
 This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
 
 :Name: Template
-:Scope: module, action
+:Scope: module, input
 :Type: word
-:Default: module=none; action=inherits module
+:Default: module=none; input=inherits module
 :Required?: no
 :Introduced: Not documented
 
@@ -41,10 +41,10 @@ Module usage
 
    module(load="omlibdbi" template="dbTemplate")
 
-Action usage
-------------
-.. _param-omlibdbi-action-template-usage:
-.. _omlibdbi.parameter.action.template-usage:
+Input usage
+-----------
+.. _param-omlibdbi-input-template-usage:
+.. _omlibdbi.parameter.input.template-usage:
 
 .. code-block:: rsyslog
 
