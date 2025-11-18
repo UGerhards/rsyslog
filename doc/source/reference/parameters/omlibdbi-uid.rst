@@ -10,7 +10,8 @@ UID
 
 .. summary-start
 
-Defines the user name that omlibdbi uses when authenticating to the database.
+Defines the user name that omlibdbi uses when authenticating to the
+database.
 
 .. summary-end
 

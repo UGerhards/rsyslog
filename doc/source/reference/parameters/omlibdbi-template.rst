@@ -11,7 +11,8 @@ Template
 
 .. summary-start
 
-Defines the template used to render records, either globally for the module or for a specific action.
+Defines the template used to render records, either globally for the
+module or for a specific action.
 
 .. summary-end
 
