@@ -36,7 +36,7 @@ Action usage
 
 .. code-block:: rsyslog
 
-   action(type="omlibdbi" Driver="mysql" Server="db.example.net")
+   action(type="omlibdbi" driver="mysql" server="db.example.net")
 
 Legacy names (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

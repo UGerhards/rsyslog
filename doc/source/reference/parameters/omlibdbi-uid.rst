@@ -35,7 +35,7 @@ Action usage
 
 .. code-block:: rsyslog
 
-   action(type="omlibdbi" UID="dbwriter" PWD="secret")
+   action(type="omlibdbi" uid="dbwriter" pwd="secret")
 
 Legacy names (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

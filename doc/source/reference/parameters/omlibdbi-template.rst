@@ -1,5 +1,6 @@
 .. _param-omlibdbi-template:
 .. _omlibdbi.parameter.module.template:
+.. _omlibdbi.parameter.action.template:
 
 Template
 ========
@@ -33,21 +34,21 @@ template.
 
 Module usage
 ------------
-.. _param-omlibdbi-module-template:
+.. _param-omlibdbi-module-template-usage:
 .. _omlibdbi.parameter.module.template-usage:
 
 .. code-block:: rsyslog
 
-   module(load="omlibdbi" Template="dbTemplate")
+   module(load="omlibdbi" template="dbTemplate")
 
 Action usage
 ------------
-.. _param-omlibdbi-action-template:
+.. _param-omlibdbi-action-template-usage:
 .. _omlibdbi.parameter.action.template-usage:
 
 .. code-block:: rsyslog
 
-   action(type="omlibdbi" Template="structuredDb")
+   action(type="omlibdbi" template="structuredDb")
 
 See also
 --------

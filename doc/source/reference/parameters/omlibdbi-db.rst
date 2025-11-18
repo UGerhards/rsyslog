@@ -36,7 +36,7 @@ Action usage
 
 .. code-block:: rsyslog
 
-   action(type="omlibdbi" DB="syslog" Server="db.example.net")
+   action(type="omlibdbi" db="syslog" server="db.example.net")
 
 Legacy names (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
