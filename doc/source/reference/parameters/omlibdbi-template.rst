@@ -1,0 +1,54 @@
+.. _param-omlibdbi-template:
+.. _omlibdbi.parameter.module.template:
+
+Template
+========
+
+.. index::
+   single: omlibdbi; Template
+   single: Template
+
+.. summary-start
+
+Defines the template used to render records, either globally for the module or for a specific action.
+
+.. summary-end
+
+This parameter applies to :doc:`../../configuration/modules/omlibdbi`.
+
+:Name: Template
+:Scope: module, action
+:Type: word
+:Default: module=none; action=inherits module
+:Required?: no
+:Introduced: Not documented
+
+Description
+-----------
+Set the default template that omlibdbi uses when writing to the database,
+then optionally override it per action.
+
+If no template is provided, omlibdbi relies on the rsyslog standard
+template.
+
+Module usage
+------------
+.. _param-omlibdbi-module-template:
+.. _omlibdbi.parameter.module.template-usage:
+
+.. code-block:: rsyslog
+
+   module(load="omlibdbi" Template="dbTemplate")
+
+Action usage
+------------
+.. _param-omlibdbi-action-template:
+.. _omlibdbi.parameter.action.template-usage:
+
+.. code-block:: rsyslog
+
+   action(type="omlibdbi" Template="structuredDb")
+
+See also
+--------
+See also :doc:`../../configuration/modules/omlibdbi`.
