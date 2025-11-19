@@ -34,7 +34,7 @@ this parameter.
 
 Module usage
 ------------
-.. _param-omlibdbi-module-driverdirectory:
+.. _param-omlibdbi-module-driverdirectory-usage:
 .. _omlibdbi.parameter.module.driverdirectory-usage:
 
 .. code-block:: rsyslog
