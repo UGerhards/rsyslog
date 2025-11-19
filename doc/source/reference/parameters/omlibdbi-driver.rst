@@ -28,7 +28,8 @@ Description
 Set this to the driver name that matches your database backend, as
 documented by libdbi-drivers. Common values include:
 
-- ``mysql`` (:doc:`../../configuration/modules/ommysql` is recommended instead)
+- ``mysql`` (:doc:`../../configuration/modules/ommysql` is recommended
+  instead)
 - ``firebird`` (Firebird and InterBase)
 - ``ingres``
 - ``msql``
@@ -36,7 +37,8 @@ documented by libdbi-drivers. Common values include:
 - ``sqlite``
 - ``sqlite3``
 - ``freetds`` (Microsoft SQL and Sybase)
-- ``pgsql`` (:doc:`../../configuration/modules/ompgsql` is recommended instead)
+- ``pgsql`` (:doc:`../../configuration/modules/ompgsql` is recommended
+  instead)
 
 Input usage
 -----------
