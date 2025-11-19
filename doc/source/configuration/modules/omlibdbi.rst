@@ -87,7 +87,7 @@ Module Parameters
         :end-before: .. summary-end
 
 
-Action Parameters
+Input Parameters
 -----------------
 
 .. list-table::
