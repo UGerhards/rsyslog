@@ -44,11 +44,11 @@ Historic names/directives for compatibility. Do not use in new configs.
 
 .. _omlibdbi.parameter.legacy.actionlibdbidbname:
 
-- $ActionLibdbiDBName — maps to DB (status: legacy)
+- $ActionlibdbiDBName — maps to DB (status: legacy)
 
 .. index::
-   single: omlibdbi; $ActionLibdbiDBName
-   single: $ActionLibdbiDBName
+   single: omlibdbi; $ActionlibdbiDBName
+   single: $ActionlibdbiDBName
 
 See also
 --------
