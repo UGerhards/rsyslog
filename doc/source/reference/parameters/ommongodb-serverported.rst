@@ -25,10 +25,10 @@ This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 Description
 -----------
-Permits to select a non-standard port for the MongoDB server. The default is 0,
-which means the system default port is used. There is no need to specify this
-parameter unless you know the server is running on a non-standard listen port.
-This parameter is deprecated and should not be used for new configurations.
+Permits to select a non-standard port for the MongoDB server. There is no need
+to specify this parameter unless you know the server is running on a
+non-standard listen port. This parameter is deprecated and should not be used
+for new configurations.
 
 Module usage
 ------------

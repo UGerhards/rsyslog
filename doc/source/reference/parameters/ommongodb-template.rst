@@ -33,13 +33,13 @@ is:
 
 .. code-block:: none
 
-   template(name="BSON" type="string" string="\"sys\" : \"%hostname%\"",
-   \"time\" : \"%timereported:::rfc3339%\", \"time_rcvd\" :
-   \"%timegenerated:::rfc3339%\", \"msg\" : \"%msg%\",
-   \"syslog_fac\" : \"%syslogfacility%\", \"syslog_server\" :
-   \"%syslogseverity%\", \"syslog_tag\" : \"%syslogtag%\",
-   \"procid\" : \"%programname%\", \"pid\" : \"%procid%\",
-   \"level\" : \"%syslogpriority-text%\"")
+   template(name="BSON" type="string" string="\"sys\" : \"%hostname%\", \
+   \"time\" : \"%timereported:::rfc3339%\", \"time_rcvd\" : \
+   \"%timegenerated:::rfc3339%\", \"msg\" : \"%msg%\", \
+   \"syslog_fac\" : \"%syslogfacility%\", \"syslog_sever\" : \
+   \"%syslogseverity%\", \"syslog_tag\" : \"%syslogtag%\", \
+   \"procid\" : \"%programname%\", \"pid\" : \"%procid%\", \
+   \"level\" : \"%syslogpriority-text:uppercase%\"")
 
 This creates the BSON document needed for MongoDB if no template is specified.
 The default schema is aligned to CEE and project lumberjack. As such, the field
@@ -50,7 +50,7 @@ field names inside MongoDB (which probably is useful depending on the use case),
 you need to select fields names based on the lumberjack schema. If you just want
 to use a subset of the fields, but with lumberjack names, you can look up the
 mapping in the default template. For example, the lumberjack field "level"
-contains the rsyslog property "syslogpriority-text".
+contains the rsyslog property "syslogpriority-text" rendered in uppercase.
 
 Module usage
 ------------
