@@ -21,129 +21,46 @@ Configuration Parameters
 
 .. note::
 
-   Parameter names are case-insensitive.
+   Parameter names are case-insensitive; camelCase is recommended for readability.
 
 
 Action Parameters
 -----------------
 
-UriStr
-^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "none", "no", "none"
-
-MongoDB connection string, as defined by the MongoDB String URI Format (See: https://docs.mongodb.com/manual/reference/connection-string/). If uristr is defined, following directives will be ignored: server, serverport, uid, pwd.
-
-
-SSL_Cert
-^^^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "none", "no", "none"
-
-Absolute path to the X509 certificate you want to use for TLS client authentication. This is optional.
-
-
-SSL_Ca
-^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "none", "no", "none"
-
-Absolute path to the trusted X509 CA certificate that signed the mongoDB server certificate. This is optional.
-
-
-db
-^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "syslog", "no", "none"
-
-Database to use.
-
-
-Collection
-^^^^^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "log", "no", "none"
-
-Collection to use.
-
-
-Allowed_Error_Codes
-^^^^^^^^^^^^^^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "array", "no", "no", "none"
-
-The list of error codes returned by MongoDB you want ommongodb to ignore.
-Please use the following format: allowed_error_codes=["11000","47"].
-
-
-Template
-^^^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "OMSR_TPL_AS_MSG", "no", "none"
-
-Template to use when submitting messages.
-
-Note rsyslog contains a canned default template to write to the MongoDB.
-It will be used automatically if no other template is specified to be
-used. This template is:
-
-.. code-block:: none
-
-   template(name="BSON" type="string" string="\\"sys\\" : \\"%hostname%\\",
-   \\"time\\" : \\"%timereported:::rfc3339%\\", \\"time\_rcvd\\" :
-   \\"%timegenerated:::rfc3339%\\", \\"msg\\" : \\"%msg%\\",
-   \\"syslog\_fac\\" : \\"%syslogfacility%\\", \\"syslog\_server\\" :
-   \\"%syslogseverity%\\", \\"syslog\_tag\\" : \\"%syslogtag%\\",
-   \\"procid\\" : \\"%programname%\\", \\"pid\\" : \\"%procid%\\",
-   \\"level\\" : \\"%syslogpriority-text%\\"")
-
-
-This creates the BSON document needed for MongoDB if no template is
-specified. The default schema is aligned to CEE and project lumberjack.
-As such, the field names are standard lumberjack field names, and
-**not** `rsyslog property names <property_replacer.html>`_. When
-specifying templates, be sure to use rsyslog property names as given in
-the table. If you would like to use lumberjack-based field names inside
-MongoDB (which probably is useful depending on the use case), you need
-to select fields names based on the lumberjack schema. If you just want
-to use a subset of the fields, but with lumberjack names, you can look
-up the mapping in the default template. For example, the lumberjack
-field "level" contains the rsyslog property "syslogpriority-text".
+   * - Parameter
+     - Summary
+   * - :ref:`param-ommongodb-uristr`
+     - .. include:: ../../reference/parameters/ommongodb-uristr.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-ssl-cert`
+     - .. include:: ../../reference/parameters/ommongodb-ssl-cert.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-ssl-ca`
+     - .. include:: ../../reference/parameters/ommongodb-ssl-ca.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-db`
+     - .. include:: ../../reference/parameters/ommongodb-db.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-collection`
+     - .. include:: ../../reference/parameters/ommongodb-collection.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-allowed-error-codes`
+     - .. include:: ../../reference/parameters/ommongodb-allowed-error-codes.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-template`
+     - .. include:: ../../reference/parameters/ommongodb-template.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
 
 
 Examples
@@ -192,58 +109,41 @@ Deprecated Parameters
 Action Parameters
 -----------------
 
-Server
-^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "127.0.0.1", "no", "none"
-
-Name or address of the MongoDB server.
-
-
-ServerPorted
-^^^^^^^^^^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "27017", "no", "none"
-
-Permits to select a non-standard port for the MongoDB server. The
-default is 0, which means the system default port is used. There is
-no need to specify this parameter unless you know the server is
-running on a non-standard listen port.
+   * - Parameter
+     - Summary
+   * - :ref:`param-ommongodb-server`
+     - .. include:: ../../reference/parameters/ommongodb-server.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-serverported`
+     - .. include:: ../../reference/parameters/ommongodb-serverported.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-uid`
+     - .. include:: ../../reference/parameters/ommongodb-uid.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
+   * - :ref:`param-ommongodb-pwd`
+     - .. include:: ../../reference/parameters/ommongodb-pwd.rst
+        :start-after: .. summary-start
+        :end-before: .. summary-end
 
 
-UID
-^^^
+.. toctree::
+   :hidden:
 
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "none", "no", "none"
-
-Logon userid used to connect to server. Must have proper permissions.
-
-
-PWD
-^^^
-
-.. csv-table::
-   :header: "type", "default", "mandatory", "|FmtObsoleteName| directive"
-   :widths: auto
-   :class: parameter-table
-
-   "word", "none", "no", "none"
-
-The user's password.
-
-
+   ../../reference/parameters/ommongodb-uristr
+   ../../reference/parameters/ommongodb-ssl-cert
+   ../../reference/parameters/ommongodb-ssl-ca
+   ../../reference/parameters/ommongodb-db
+   ../../reference/parameters/ommongodb-collection
+   ../../reference/parameters/ommongodb-allowed-error-codes
+   ../../reference/parameters/ommongodb-template
+   ../../reference/parameters/ommongodb-server
+   ../../reference/parameters/ommongodb-serverported
+   ../../reference/parameters/ommongodb-uid
+   ../../reference/parameters/ommongodb-pwd
