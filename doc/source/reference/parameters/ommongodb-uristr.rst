@@ -26,7 +26,7 @@ This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 Description
 -----------
 MongoDB connection string, as defined by the MongoDB String URI Format (see
-https://docs.mongodb.com/manual/reference/connection-string/). If ``UriStr`` is
+<https://docs.mongodb.com/manual/reference/connection-string/>). If ``UriStr`` is
 set, the legacy ``Server``, ``ServerPorted``, ``UID``, and ``PWD`` directives are
 ignored.
 

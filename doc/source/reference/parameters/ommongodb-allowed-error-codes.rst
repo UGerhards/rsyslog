@@ -26,7 +26,7 @@ This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 Description
 -----------
 The list of error codes returned by MongoDB you want ommongodb to ignore. Use the
-following format: ``allowed_error_codes=["11000","47"]``.
+following format: ``allowedErrorCodes=["11000","47"]``.
 
 Module usage
 ------------

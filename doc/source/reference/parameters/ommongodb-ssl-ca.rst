@@ -25,7 +25,7 @@ This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 Description
 -----------
-Absolute path to the trusted X509 CA certificate that signed the mongoDB server
+Absolute path to the trusted X509 CA certificate that signed the MongoDB server
 certificate. This is optional.
 
 Module usage
