@@ -1,5 +1,5 @@
 .. _param-ommongodb-server:
-.. _ommongodb.parameter.module.server:
+.. _ommongodb.parameter.input.server:
 
 Server
 ======
@@ -17,9 +17,9 @@ Provides the MongoDB server host name or address (deprecated in favor of ``UriSt
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: Server
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=127.0.0.1
+:Default: input=127.0.0.1
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 Name or address of the MongoDB server. This parameter is deprecated and should
 not be used for new configurations.
 
-Module usage
-------------
-.. _param-ommongodb-module-server:
-.. _ommongodb.parameter.module.server-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-server:
+.. _ommongodb.parameter.input.server-usage:
 
 .. code-block:: rsyslog
 

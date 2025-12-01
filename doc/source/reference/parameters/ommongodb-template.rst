@@ -1,5 +1,5 @@
 .. _param-ommongodb-template:
-.. _ommongodb.parameter.module.template:
+.. _ommongodb.parameter.input.template:
 
 Template
 ========
@@ -17,9 +17,9 @@ Selects the rsyslog template used when formatting log records for MongoDB insert
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: Template
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=OMSR_TPL_AS_MSG
+:Default: input=OMSR_TPL_AS_MSG
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -52,10 +52,10 @@ to use a subset of the fields, but with lumberjack names, you can look up the
 mapping in the default template. For example, the lumberjack field "level"
 contains the rsyslog property "syslogpriority-text" rendered in uppercase.
 
-Module usage
-------------
-.. _param-ommongodb-module-template:
-.. _ommongodb.parameter.module.template-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-template:
+.. _ommongodb.parameter.input.template-usage:
 
 .. code-block:: rsyslog
 

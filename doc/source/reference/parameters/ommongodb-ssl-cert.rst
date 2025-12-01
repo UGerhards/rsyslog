@@ -1,5 +1,5 @@
 .. _param-ommongodb-ssl-cert:
-.. _ommongodb.parameter.module.ssl-cert:
+.. _ommongodb.parameter.input.ssl-cert:
 
 SSL_Cert
 ========
@@ -17,9 +17,9 @@ Specifies the absolute path to the X.509 client certificate for TLS authenticati
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: SSL_Cert
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=none
+:Default: input=none
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 Absolute path to the X509 certificate you want to use for TLS client
 authentication. This is optional.
 
-Module usage
-------------
-.. _param-ommongodb-module-ssl-cert:
-.. _ommongodb.parameter.module.ssl-cert-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-ssl-cert:
+.. _ommongodb.parameter.input.ssl-cert-usage:
 
 .. code-block:: rsyslog
 

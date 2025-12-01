@@ -1,5 +1,5 @@
 .. _param-ommongodb-pwd:
-.. _ommongodb.parameter.module.pwd:
+.. _ommongodb.parameter.input.pwd:
 
 PWD
 ===
@@ -17,9 +17,9 @@ Provides the password for MongoDB authentication (deprecated; prefer credentials
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: PWD
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=none
+:Default: input=none
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 The user's password. This parameter is deprecated and should not be used for new
 configurations.
 
-Module usage
-------------
-.. _param-ommongodb-module-pwd:
-.. _ommongodb.parameter.module.pwd-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-pwd:
+.. _ommongodb.parameter.input.pwd-usage:
 
 .. code-block:: rsyslog
 

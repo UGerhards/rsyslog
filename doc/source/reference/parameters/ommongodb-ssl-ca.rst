@@ -1,5 +1,5 @@
 .. _param-ommongodb-ssl-ca:
-.. _ommongodb.parameter.module.ssl-ca:
+.. _ommongodb.parameter.input.ssl-ca:
 
 SSL_Ca
 ======
@@ -17,9 +17,9 @@ Provides the absolute path to the trusted X.509 CA certificate that signed the M
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: SSL_Ca
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=none
+:Default: input=none
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 Absolute path to the trusted X509 CA certificate that signed the MongoDB server
 certificate. This is optional.
 
-Module usage
-------------
-.. _param-ommongodb-module-ssl-ca:
-.. _ommongodb.parameter.module.ssl-ca-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-ssl-ca:
+.. _ommongodb.parameter.input.ssl-ca-usage:
 
 .. code-block:: rsyslog
 

@@ -1,5 +1,5 @@
 .. _param-ommongodb-db:
-.. _ommongodb.parameter.module.db:
+.. _ommongodb.parameter.input.db:
 
 db
 ==
@@ -17,9 +17,9 @@ Selects the MongoDB database where rsyslog should store log records.
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: db
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=syslog
+:Default: input=syslog
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -27,10 +27,10 @@ Description
 -----------
 Database to use.
 
-Module usage
-------------
-.. _param-ommongodb-module-db:
-.. _ommongodb.parameter.module.db-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-db:
+.. _ommongodb.parameter.input.db-usage:
 
 .. code-block:: rsyslog
 

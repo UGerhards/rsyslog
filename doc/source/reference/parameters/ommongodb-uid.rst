@@ -1,5 +1,5 @@
 .. _param-ommongodb-uid:
-.. _ommongodb.parameter.module.uid:
+.. _ommongodb.parameter.input.uid:
 
 UID
 ===
@@ -17,9 +17,9 @@ Sets the login user ID for MongoDB authentication (deprecated; prefer ``UriStr``
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: UID
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=none
+:Default: input=none
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 Logon userid used to connect to server. Must have proper permissions. This
 parameter is deprecated and should not be used for new configurations.
 
-Module usage
-------------
-.. _param-ommongodb-module-uid:
-.. _ommongodb.parameter.module.uid-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-uid:
+.. _ommongodb.parameter.input.uid-usage:
 
 .. code-block:: rsyslog
 

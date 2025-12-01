@@ -1,5 +1,5 @@
 .. _param-ommongodb-collection:
-.. _ommongodb.parameter.module.collection:
+.. _ommongodb.parameter.input.collection:
 
 Collection
 ==========
@@ -17,9 +17,9 @@ Specifies the MongoDB collection within the selected database for log entries.
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: Collection
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=log
+:Default: input=log
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -27,10 +27,10 @@ Description
 -----------
 Collection to use.
 
-Module usage
-------------
-.. _param-ommongodb-module-collection:
-.. _ommongodb.parameter.module.collection-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-collection:
+.. _ommongodb.parameter.input.collection-usage:
 
 .. code-block:: rsyslog
 

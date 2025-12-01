@@ -1,5 +1,5 @@
 .. _param-ommongodb-allowed-error-codes:
-.. _ommongodb.parameter.module.allowed-error-codes:
+.. _ommongodb.parameter.input.allowed-error-codes:
 
 Allowed_Error_Codes
 ===================
@@ -17,9 +17,9 @@ Lists MongoDB error codes that ommongodb should ignore instead of treating as fa
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: Allowed_Error_Codes
-:Scope: module
+:Scope: input
 :Type: array
-:Default: module=no
+:Default: input=no
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -28,10 +28,10 @@ Description
 The list of error codes returned by MongoDB you want ommongodb to ignore. Use the
 following format: ``allowedErrorCodes=["11000","47"]``.
 
-Module usage
-------------
-.. _param-ommongodb-module-allowed-error-codes:
-.. _ommongodb.parameter.module.allowed-error-codes-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-allowed-error-codes:
+.. _ommongodb.parameter.input.allowed-error-codes-usage:
 
 .. code-block:: rsyslog
 

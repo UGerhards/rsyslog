@@ -1,5 +1,5 @@
 .. _param-ommongodb-serverported:
-.. _ommongodb.parameter.module.serverported:
+.. _ommongodb.parameter.input.serverported:
 
 ServerPorted
 ============
@@ -17,9 +17,9 @@ Sets a non-standard MongoDB server port number (deprecated; use ``UriStr`` inste
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: ServerPorted
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=27017
+:Default: input=27017
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
@@ -30,10 +30,10 @@ to specify this parameter unless you know the server is running on a
 non-standard listen port. This parameter is deprecated and should not be used
 for new configurations.
 
-Module usage
-------------
-.. _param-ommongodb-module-serverported:
-.. _ommongodb.parameter.module.serverported-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-serverported:
+.. _ommongodb.parameter.input.serverported-usage:
 
 .. code-block:: rsyslog
 

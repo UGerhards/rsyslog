@@ -1,5 +1,5 @@
 .. _param-ommongodb-uristr:
-.. _ommongodb.parameter.module.uristr:
+.. _ommongodb.parameter.input.uristr:
 
 UriStr
 ======
@@ -17,23 +17,22 @@ Sets the MongoDB connection string to use instead of individual server, port, an
 This parameter applies to :doc:`../../configuration/modules/ommongodb`.
 
 :Name: UriStr
-:Scope: module
+:Scope: input
 :Type: word
-:Default: module=none
+:Default: input=none
 :Required?: no
 :Introduced: at least 7.x, possibly earlier
 
 Description
 -----------
-MongoDB connection string, as defined by the MongoDB String URI Format (see
-<https://docs.mongodb.com/manual/reference/connection-string/>). If ``UriStr`` is
+MongoDB connection string, as defined by the `MongoDB String URI Format <https://docs.mongodb.com/manual/reference/connection-string/>`_. If ``UriStr`` is
 set, the legacy ``Server``, ``ServerPorted``, ``UID``, and ``PWD`` directives are
 ignored.
 
-Module usage
-------------
-.. _param-ommongodb-module-uristr:
-.. _ommongodb.parameter.module.uristr-usage:
+Input usage
+-----------
+.. _param-ommongodb-input-uristr:
+.. _ommongodb.parameter.input.uristr-usage:
 
 .. code-block:: rsyslog
 
