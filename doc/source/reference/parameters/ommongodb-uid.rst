@@ -1,6 +1,11 @@
 .. _param-ommongodb-uid:
 .. _ommongodb.parameter.input.uid:
 
+.. meta::
+   :description: Sets the login user ID for MongoDB authentication; deprecated
+                 in favor of credentials in ``UriStr``.
+   :keywords: rsyslog, ommongodb, user id, mongodb action parameter
+
 UID
 ===
 
@@ -10,7 +15,8 @@ UID
 
 .. summary-start
 
-Sets the login user ID for MongoDB authentication (deprecated; prefer ``UriStr`` credentials).
+Sets the login user ID for MongoDB authentication (deprecated; prefer
+``UriStr`` credentials).
 
 .. summary-end
 

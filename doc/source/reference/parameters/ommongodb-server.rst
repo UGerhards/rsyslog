@@ -1,6 +1,11 @@
 .. _param-ommongodb-server:
 .. _ommongodb.parameter.input.server:
 
+.. meta::
+   :description: Provides the MongoDB server host name or address; deprecated
+                 in favor of ``UriStr``.
+   :keywords: rsyslog, ommongodb, server, mongodb action parameter
+
 Server
 ======
 
@@ -10,7 +15,8 @@ Server
 
 .. summary-start
 
-Provides the MongoDB server host name or address (deprecated in favor of ``UriStr``).
+Provides the MongoDB server host name or address (deprecated in favor of
+``UriStr``).
 
 .. summary-end
 

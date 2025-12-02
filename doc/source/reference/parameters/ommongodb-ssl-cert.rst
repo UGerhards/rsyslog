@@ -1,6 +1,11 @@
 .. _param-ommongodb-ssl-cert:
 .. _ommongodb.parameter.input.ssl-cert:
 
+.. meta::
+   :description: Specifies the absolute path to the X.509 client certificate
+                 used for TLS authentication.
+   :keywords: rsyslog, ommongodb, ssl cert, mongodb action parameter
+
 SSL_Cert
 ========
 
@@ -10,7 +15,8 @@ SSL_Cert
 
 .. summary-start
 
-Specifies the absolute path to the X.509 client certificate for TLS authentication.
+Specifies the absolute path to the X.509 client certificate for TLS
+authentication.
 
 .. summary-end
 

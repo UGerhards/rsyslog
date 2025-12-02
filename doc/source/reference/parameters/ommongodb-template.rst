@@ -1,6 +1,11 @@
 .. _param-ommongodb-template:
 .. _ommongodb.parameter.input.template:
 
+.. meta::
+   :description: Selects the rsyslog template used when formatting log records
+                 for MongoDB insertion.
+   :keywords: rsyslog, ommongodb, template, mongodb action parameter
+
 Template
 ========
 
@@ -10,7 +15,8 @@ Template
 
 .. summary-start
 
-Selects the rsyslog template used when formatting log records for MongoDB insertion.
+Selects the rsyslog template used when formatting log records for MongoDB
+insertion.
 
 .. summary-end
 
@@ -28,8 +34,8 @@ Description
 Template to use when submitting messages.
 
 Note rsyslog contains a canned default template to write to the MongoDB. It will
-be used automatically if no other template is specified to be used. This template
-is:
+be used automatically if no other template is specified to be used. This
+template is:
 
 .. code-block:: none
 
@@ -46,11 +52,12 @@ The default schema is aligned to CEE and project lumberjack. As such, the field
 names are standard lumberjack field names, and **not** `rsyslog property names
 <property_replacer.html>`_. When specifying templates, be sure to use rsyslog
 property names as given in the table. If you would like to use lumberjack-based
-field names inside MongoDB (which probably is useful depending on the use case),
-you need to select fields names based on the lumberjack schema. If you just want
-to use a subset of the fields, but with lumberjack names, you can look up the
-mapping in the default template. For example, the lumberjack field "level"
-contains the rsyslog property "syslogpriority-text" rendered in uppercase.
+field names inside MongoDB (which probably is useful depending on the use
+case), you need to select fields names based on the lumberjack schema. If you
+just want to use a subset of the fields, but with lumberjack names, you can
+look up the mapping in the default template. For example, the lumberjack field
+"level" contains the rsyslog property "syslogpriority-text" rendered in
+uppercase.
 
 Input usage
 -----------

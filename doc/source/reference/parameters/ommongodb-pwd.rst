@@ -1,6 +1,11 @@
 .. _param-ommongodb-pwd:
 .. _ommongodb.parameter.input.pwd:
 
+.. meta::
+   :description: Provides the password for MongoDB authentication; deprecated
+                 in favor of credentials in ``UriStr``.
+   :keywords: rsyslog, ommongodb, password, mongodb action parameter
+
 PWD
 ===
 
@@ -10,7 +15,8 @@ PWD
 
 .. summary-start
 
-Provides the password for MongoDB authentication (deprecated; prefer credentials in ``UriStr``).
+Provides the password for MongoDB authentication (deprecated; prefer
+credentials in ``UriStr``).
 
 .. summary-end
 

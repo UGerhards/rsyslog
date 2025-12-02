@@ -1,6 +1,11 @@
 .. _param-ommongodb-ssl-ca:
 .. _ommongodb.parameter.input.ssl-ca:
 
+.. meta::
+   :description: Provides the absolute path to the trusted X.509 CA certificate
+                 that signed the MongoDB server certificate.
+   :keywords: rsyslog, ommongodb, ssl ca, mongodb action parameter
+
 SSL_Ca
 ======
 
@@ -10,7 +15,8 @@ SSL_Ca
 
 .. summary-start
 
-Provides the absolute path to the trusted X.509 CA certificate that signed the MongoDB server certificate.
+Provides the absolute path to the trusted X.509 CA certificate that signed the
+MongoDB server certificate.
 
 .. summary-end
 

@@ -1,6 +1,11 @@
 .. _param-ommongodb-collection:
 .. _ommongodb.parameter.input.collection:
 
+.. meta::
+   :description: Specifies the MongoDB collection within the selected database
+                 for log entries.
+   :keywords: rsyslog, ommongodb, collection, mongodb action parameter
+
 Collection
 ==========
 

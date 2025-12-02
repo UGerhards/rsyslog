@@ -1,6 +1,11 @@
 .. _param-ommongodb-serverported:
 .. _ommongodb.parameter.input.serverported:
 
+.. meta::
+   :description: Sets a non-standard MongoDB server port number; deprecated in
+                 favor of ``UriStr``.
+   :keywords: rsyslog, ommongodb, server port, mongodb action parameter
+
 ServerPorted
 ============
 
@@ -10,7 +15,8 @@ ServerPorted
 
 .. summary-start
 
-Sets a non-standard MongoDB server port number (deprecated; use ``UriStr`` instead).
+Sets a non-standard MongoDB server port number (deprecated; use ``UriStr``
+instead).
 
 .. summary-end
 

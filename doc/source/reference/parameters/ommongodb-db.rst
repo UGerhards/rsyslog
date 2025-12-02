@@ -1,6 +1,10 @@
 .. _param-ommongodb-db:
 .. _ommongodb.parameter.input.db:
 
+.. meta::
+   :description: Selects the MongoDB database where rsyslog stores log records.
+   :keywords: rsyslog, ommongodb, db, mongodb action parameter
+
 db
 ==
 
