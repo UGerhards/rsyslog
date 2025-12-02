@@ -51,13 +51,12 @@ This creates the BSON document needed for MongoDB if no template is specified.
 The default schema is aligned to CEE and project lumberjack. As such, the field
 names are standard lumberjack field names, and **not** `rsyslog property names
 <property_replacer.html>`_. When specifying templates, be sure to use rsyslog
-property names as given in the table. If you would like to use lumberjack-based
-field names inside MongoDB (which probably is useful depending on the use
-case), you need to select fields names based on the lumberjack schema. If you
-just want to use a subset of the fields, but with lumberjack names, you can
-look up the mapping in the default template. For example, the lumberjack field
-"level" contains the rsyslog property "syslogpriority-text" rendered in
-uppercase.
+property names. If you would like to use lumberjack-based field names inside
+MongoDB (which probably is useful depending on the use case), you need to
+select fields names based on the lumberjack schema. If you just want to use a
+subset of the fields, but with lumberjack names, you can look up the mapping in
+the default template. For example, the lumberjack field "level" contains the
+rsyslog property "syslogpriority-text" rendered in uppercase.
 
 Input usage
 -----------
