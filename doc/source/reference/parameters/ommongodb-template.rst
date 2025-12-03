@@ -33,16 +33,17 @@ Description
 -----------
 Template to use when submitting messages.
 
-Note rsyslog contains a canned default template to write to the MongoDB. It will
-be used automatically if no other template is specified to be used. This
-template is:
+Note that if no template is specified, rsyslog generates a default BSON
+document with a structure aligned to CEE and project lumberjack. If you need to
+customize the document format, you can define your own template. The following
+is an example template that produces a document similar to the default:
 
 .. code-block:: none
 
    template(name="BSON" type="string" string="{\"sys\" : \"%hostname%\", \
    \"time\" : \"%timereported:::rfc3339%\", \"time_rcvd\" : \
    \"%timegenerated:::rfc3339%\", \"msg\" : \"%msg%\", \
-   \"syslog_fac\" : \"%syslogfacility%\", \"syslog_server\" : \
+   \"syslog_fac\" : \"%syslogfacility%\", \"syslog_sever\" : \
    \"%syslogseverity%\", \"syslog_tag\" : \"%syslogtag%\", \
    \"procid\" : \"%programname%\", \"pid\" : \"%procid%\", \
    \"level\" : \"%syslogpriority-text:uppercase%\"}")
