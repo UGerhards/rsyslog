@@ -40,13 +40,7 @@ is an example template that produces a document similar to the default:
 
 .. code-block:: none
 
-   template(name="BSON" type="string" string="{\"sys\" : \"%hostname%\", \
-   \"time\" : \"%timereported:::rfc3339%\", \"time_rcvd\" : \
-   \"%timegenerated:::rfc3339%\", \"msg\" : \"%msg%\", \
-   \"syslog_fac\" : \"%syslogfacility%\", \"syslog_sever\" : \
-   \"%syslogseverity%\", \"syslog_tag\" : \"%syslogtag%\", \
-   \"procid\" : \"%programname%\", \"pid\" : \"%procid%\", \
-   \"level\" : \"%syslogpriority-text:uppercase%\"}")
+   template(name="BSON" type="string" string="{\"sys\": \"%hostname%\", \"time\": \"%timereported:::rfc3339%\", \"time_rcvd\": \"%timegenerated:::rfc3339%\", \"msg\": \"%msg%\", \"syslog_fac\": \"%syslogfacility%\", \"syslog_server\": \"%syslogseverity%\", \"syslog_tag\": \"%syslogtag%\", \"procid\": \"%programname%\", \"pid\": \"%procid%\", \"level\": \"%syslogpriority-text:uppercase%\"}")
 
 This creates the BSON document needed for MongoDB if no template is specified.
 The default schema is aligned to CEE and project lumberjack. As such, the field
