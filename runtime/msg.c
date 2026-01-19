@@ -2725,6 +2725,59 @@ void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMs
         pThis->iLenMSG = 0;
 }
 
+/* reset parsing-related fields so rawmsg can be parsed again */
+void MsgResetParseState(smsg_t *const pMsg) {
+    ISOBJ_TYPE_assert(pMsg, msg);
+
+    pMsg->bParseSuccess = 0;
+    pMsg->offAfterPRI = 0;
+    pMsg->offMSG = -1;
+    pMsg->iLenMSG = 0;
+    pMsg->iProtocolVersion = 0;
+    if ((pMsg->msgFlags & NO_PRI_IN_RAW) == 0) {
+        pMsg->iFacility = LOG_INVLD;
+        pMsg->iSeverity = LOG_DEBUG;
+    }
+
+    freeTAG(pMsg);
+    pMsg->iLenTAG = 0;
+    pMsg->TAG.szBuf[0] = '\0';
+
+    freeHOSTNAME(pMsg);
+    pMsg->iLenHOSTNAME = 0;
+    pMsg->pszHOSTNAME = NULL;
+    pMsg->szHOSTNAME[0] = '\0';
+
+    if (pMsg->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) {
+        free(pMsg->PROGNAME.ptr);
+    }
+    pMsg->iLenPROGNAME = -1;
+    pMsg->PROGNAME.szBuf[0] = '\0';
+
+    if (pMsg->pCSAPPNAME != NULL) rsCStrDestruct(&pMsg->pCSAPPNAME);
+    if (pMsg->pCSPROCID != NULL) rsCStrDestruct(&pMsg->pCSPROCID);
+    if (pMsg->pCSMSGID != NULL) rsCStrDestruct(&pMsg->pCSMSGID);
+
+    free(pMsg->pszStrucData);
+    pMsg->pszStrucData = NULL;
+    pMsg->lenStrucData = 0;
+
+    free(pMsg->pszTIMESTAMP3164);
+    pMsg->pszTIMESTAMP3164 = NULL;
+    free(pMsg->pszTIMESTAMP3339);
+    pMsg->pszTIMESTAMP3339 = NULL;
+    free(pMsg->pszTIMESTAMP_MySQL);
+    pMsg->pszTIMESTAMP_MySQL = NULL;
+    free(pMsg->pszTIMESTAMP_PgSQL);
+    pMsg->pszTIMESTAMP_PgSQL = NULL;
+
+    pMsg->pszTimestamp3164[0] = '\0';
+    pMsg->pszTimestamp3339[0] = '\0';
+    pMsg->pszTIMESTAMP_SecFrac[0] = '\0';
+    pMsg->pszTIMESTAMP_Unix[0] = '\0';
+    memset(&pMsg->tTIMESTAMP, 0, sizeof(pMsg->tTIMESTAMP));
+}
+
 
 /* set raw message in message object. Size of message is not provided. This
  * function should only be used when it is unavoidable (and over time we should

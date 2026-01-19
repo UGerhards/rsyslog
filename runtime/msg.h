@@ -202,6 +202,7 @@ rsRetVal MsgSetAfterPRIOffs(smsg_t *pMsg, int offs);
 void MsgSetMSGoffs(smsg_t *pMsg, int offs);
 void MsgSetRawMsgWOSize(smsg_t *pMsg, char *pszRawMsg);
 void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMsg, const size_t lenMsg);
+void MsgResetParseState(smsg_t *pMsg);
 rsRetVal MsgReplaceMSG(smsg_t *pThis, const uchar *pszMSG, int lenMSG);
 uchar *MsgGetProp(smsg_t *pMsg,
                   struct templateEntry *pTpe,
