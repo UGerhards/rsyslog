@@ -2762,9 +2762,7 @@ void MsgResetParseState(smsg_t *const pMsg) {
     pMsg->pszStrucData = NULL;
     pMsg->lenStrucData = 0;
 
-    free(pMsg->pszTIMESTAMP3164);
     pMsg->pszTIMESTAMP3164 = NULL;
-    free(pMsg->pszTIMESTAMP3339);
     pMsg->pszTIMESTAMP3339 = NULL;
     free(pMsg->pszTIMESTAMP_MySQL);
     pMsg->pszTIMESTAMP_MySQL = NULL;
