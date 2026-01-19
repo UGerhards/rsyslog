@@ -27,8 +27,8 @@ Description
 Hostname from the message. This is the HOSTNAME field exactly as it was
 received or set by an input module. Rsyslog does not rewrite this field based
 on DNS or ``preserveFQDN``. For the DNS-resolved sender name, use
-:ref:`prop-message-fromhost`. This property honors the ``preserveFQDN``
-setting. For the local system name, use :ref:`prop-system-myhostname`.
+:ref:`prop-message-fromhost`, which honors the ``preserveFQDN`` setting.
+For the local system name, use :ref:`prop-system-myhostname`.
 
 Usage
 -----
