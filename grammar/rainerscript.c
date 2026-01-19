@@ -2835,11 +2835,6 @@ static void ATTR_NONNULL() doFunct_Reparse(struct cnffunc *const func __attribut
     ret->d.n = 0;
     wtiSetScriptErrno(pWti, RS_SCRIPT_EOK);
 
-    if (objUse(parser, CORE_COMPONENT) != RS_RET_OK) {
-        wtiSetScriptErrno(pWti, RS_SCRIPT_EINVAL);
-        return;
-    }
-
     MsgResetParseState(pMsg);
     pMsg->msgFlags |= NEEDS_PARSING;
     localRet = parser.ParseMsg(pMsg);
