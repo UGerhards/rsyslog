@@ -25,12 +25,12 @@ Description
 Hostname of the system the message was received from (in a relay chain, this is
 the system immediately in front of us and not necessarily the original sender).
 This is a DNS-resolved name, except if that is not possible or DNS resolution
-has been disabled. When ``preserveFQDN`` is "off" (the default), rsyslog strips
-the domain from the sender's hostname if it matches the local system's domain.
-When "on", the full FQDN from the DNS lookup is used. Reverse lookup results
-are cached; see :ref:`reverse_dns_cache` for controlling cache timeout. Forward
-lookups for outbound connections are not cached by rsyslog and are resolved via
-the system resolver whenever a connection is made.
+has been disabled. When ``preserveFQDN`` is "off" (the default), rsyslog uses
+only the short hostname (the portion before the first dot) when a domain is
+present. When "on", the full FQDN from the DNS lookup is used. Reverse lookup
+results are cached; see :ref:`reverse_dns_cache` for controlling cache timeout.
+Forward lookups for outbound connections are not cached by rsyslog and are
+resolved via the system resolver whenever a connection is made.
 
 Usage
 -----
