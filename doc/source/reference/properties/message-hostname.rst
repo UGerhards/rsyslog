@@ -24,7 +24,11 @@ This property belongs to the **Message Properties** group.
 
 Description
 -----------
-Hostname from the message.
+Hostname from the message. This is the HOSTNAME field exactly as it was
+received or set by an input module. Rsyslog does not rewrite this field based
+on DNS or ``preserveFQDN``. Use :ref:`prop-message-fromhost` when you need the
+DNS-resolved sender name (and to honor ``preserveFQDN``), or
+:ref:`prop-system-myhostname` for the local system name.
 
 Usage
 -----
