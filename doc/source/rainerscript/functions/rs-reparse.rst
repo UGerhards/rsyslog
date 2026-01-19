@@ -27,12 +27,13 @@ Examples
 ========
 
 Use ``reparse()`` after fixing a malformed raw message to rebuild the syslog
-fields.
+fields. This example updates the raw message directly before reparsing.
 
 .. code-block:: none
 
-   set $.fixed_rawmsg = "<" + $pri + ">" + $fromhost + " " + $syslogtag + " " + $msg;
-   set $rawmsg = $.fixed_rawmsg;
-   if reparse() == 0 then {
-     # handle parse failures, e.g. send to a fallback file
+   if $rawmsg contains 'bad-string' then {
+     set $rawmsg = replace($rawmsg, 'bad-string', 'good-string');
+     if reparse() == 0 then {
+       # handle parse failures, e.g. send to a fallback file
+     }
    }

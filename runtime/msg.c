@@ -2750,6 +2750,7 @@ void MsgResetParseState(smsg_t *const pMsg) {
 
     if (pMsg->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) {
         free(pMsg->PROGNAME.ptr);
+        pMsg->PROGNAME.ptr = NULL;
     }
     pMsg->iLenPROGNAME = -1;
     pMsg->PROGNAME.szBuf[0] = '\0';

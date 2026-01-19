@@ -2836,8 +2836,10 @@ static void ATTR_NONNULL() doFunct_Reparse(struct cnffunc *const func __attribut
     wtiSetScriptErrno(pWti, RS_SCRIPT_EOK);
 
     MsgResetParseState(pMsg);
+    pMsg->msgFlags |= BEING_REPARSED;
     pMsg->msgFlags |= NEEDS_PARSING;
     localRet = parser.ParseMsg(pMsg);
+    pMsg->msgFlags &= ~BEING_REPARSED;
     if (localRet == RS_RET_OK) {
         ret->d.n = 1;
     } else {
