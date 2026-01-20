@@ -2761,6 +2761,14 @@ void MsgResetParseState(smsg_t *const pMsg) {
     if (pMsg->pCSAPPNAME != NULL) rsCStrDestruct(&pMsg->pCSAPPNAME);
     if (pMsg->pCSPROCID != NULL) rsCStrDestruct(&pMsg->pCSPROCID);
     if (pMsg->pCSMSGID != NULL) rsCStrDestruct(&pMsg->pCSMSGID);
+    if (pMsg->json != NULL) {
+        json_object_put(pMsg->json);
+        pMsg->json = NULL;
+    }
+    if (pMsg->localvars != NULL) {
+        json_object_put(pMsg->localvars);
+        pMsg->localvars = NULL;
+    }
 
     free(pMsg->pszStrucData);
     pMsg->pszStrucData = NULL;

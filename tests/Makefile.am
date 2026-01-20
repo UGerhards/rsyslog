@@ -1345,6 +1345,7 @@ TESTS +=  \
 	rscript_hash32.sh \
 	rscript_hash64.sh \
 	rscript_replace.sh \
+	rscript_reparse.sh \
 	omfile-sizelimitcmd-many.sh \
 	omfile-outchannel-many.sh
 if HAVE_VALGRIND
@@ -3285,6 +3286,7 @@ EXTRA_DIST= \
 	rscript_hash64.sh \
 	rscript_hash64-vg.sh \
 	rscript_replace.sh \
+	rscript_reparse.sh \
 	rscript_replace_complex.sh \
 	rscript_split.sh \
 	rscript_append_json.sh \
