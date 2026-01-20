@@ -2739,7 +2739,10 @@ void MsgResetParseState(smsg_t *const pMsg) {
         pMsg->iSeverity = LOG_DEBUG;
     }
 
-    freeTAG(pMsg);
+    if (pMsg->iLenTAG >= CONF_TAG_BUFSIZE) {
+        free(pMsg->TAG.pszTAG);
+        pMsg->TAG.pszTAG = NULL;
+    }
     pMsg->iLenTAG = 0;
     pMsg->TAG.szBuf[0] = '\0';
 
