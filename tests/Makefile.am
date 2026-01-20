@@ -637,6 +637,7 @@ TESTS +=  \
 	fromhost-port.sh \
 	fromhost-port-tuple.sh \
 	fromhost-port-async-ruleset.sh \
+	fromhost-preservefqdn.sh \
 	allowed-sender-tcp-ok.sh \
 	allowed-sender-tcp-fail.sh \
 	allowed-sender-tcp-hostname-ok.sh \
@@ -2643,6 +2644,7 @@ EXTRA_DIST= \
 	fromhost-port.sh \
 	fromhost-port-tuple.sh \
 	fromhost-port-async-ruleset.sh \
+	fromhost-preservefqdn.sh \
 	imtcp-tls-gibberish.sh \
 	imtcp-listen-port-file-2.sh \
 	allowed-sender-tcp-ok.sh \
