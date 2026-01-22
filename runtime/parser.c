@@ -614,7 +614,7 @@ static rsRetVal ParseMsg(smsg_t *pMsg) {
      * matter if we log a handful messages more than we should...
      */
     if (localRet != RS_RET_OK) {
-        if (++iErrMsgRateLimiter < 1000) {
+        if ((pMsg->msgFlags & BEING_REPARSED) == 0 && ++iErrMsgRateLimiter < 1000) {
             LogError(0, localRet,
                      "Error: one message could not be processed by "
                      "any parser, message is being discarded (start of raw msg: '%.60s')",

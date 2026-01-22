@@ -160,6 +160,8 @@ struct msg {
     /* rawmsg does not include a PRI (Solaris!), but PRI is already set correctly in the msg object */
     #define PRESERVE_CASE 0x200
     /* preserve case in fromhost */
+    #define BEING_REPARSED 0x400
+    /* suppress parser discard logs when reparsing in-script */
 
     /* (syslog) protocol types */
     #define MSG_LEGACY_PROTOCOL 0
@@ -202,6 +204,7 @@ rsRetVal MsgSetAfterPRIOffs(smsg_t *pMsg, int offs);
 void MsgSetMSGoffs(smsg_t *pMsg, int offs);
 void MsgSetRawMsgWOSize(smsg_t *pMsg, char *pszRawMsg);
 void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMsg, const size_t lenMsg);
+void MsgResetParseState(smsg_t *pMsg);
 rsRetVal MsgReplaceMSG(smsg_t *pThis, const uchar *pszMSG, int lenMSG);
 uchar *MsgGetProp(smsg_t *pMsg,
                   struct templateEntry *pTpe,
