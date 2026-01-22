@@ -2824,18 +2824,32 @@ static void ATTR_NONNULL() doFunct_PreviousActionSuspended(struct cnffunc *const
     DBGPRINTF("previous_action_suspended() is %d\n", (int)ret->d.n);
 }
 
-static void ATTR_NONNULL() doFunct_Reparse(struct cnffunc *const func __attribute__((unused)),
+static void ATTR_NONNULL() doFunct_Reparse(struct cnffunc *const func,
                                            struct svar *__restrict__ const ret,
                                            void *const usrptr,
                                            wti_t *__restrict__ const pWti) {
     smsg_t *const pMsg = (smsg_t *)usrptr;
     rsRetVal localRet;
+    struct svar srcVal;
+    int bMustFree = 0;
+    const char *rawmsg = NULL;
+    size_t rawmsgLen = 0;
 
     ret->datatype = 'N';
     ret->d.n = 0;
     wtiSetScriptErrno(pWti, RS_SCRIPT_EOK);
 
     MsgResetParseState(pMsg);
+    if (func->nParams == 1) {
+        cnfexprEval(func->expr[0], &srcVal, usrptr, pWti);
+        rawmsg = (const char *)var2CString(&srcVal, &bMustFree);
+        rawmsgLen = strlen(rawmsg);
+        MsgSetRawMsg(pMsg, rawmsg, rawmsgLen);
+        varFreeMembers(&srcVal);
+        if (bMustFree) {
+            free((void *)rawmsg);
+        }
+    }
     pMsg->msgFlags |= BEING_REPARSED;
     pMsg->msgFlags |= NEEDS_PARSING;
     localRet = parser.ParseMsg(pMsg);
@@ -4150,7 +4164,7 @@ static struct scriptFunct functions[] = {
     {"get_property", 2, 2, doFunc_get_property, NULL, NULL},
     {"script_error", 0, 0, doFunct_ScriptError, NULL, NULL},
     {"previous_action_suspended", 0, 0, doFunct_PreviousActionSuspended, NULL, NULL},
-    {"reparse", 0, 0, doFunct_Reparse, NULL, NULL},
+    {"reparse", 0, 1, doFunct_Reparse, NULL, NULL},
     {"b64_decode", 1, 1, doFunct_Base64Dec, NULL, NULL},
     {"split", 2, 2, doFunct_split, NULL, NULL},
     {"is_in_subnet", 2, 2, doFunct_is_in_subnet, NULL, NULL},

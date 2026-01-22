@@ -20,7 +20,8 @@ Purpose
 
 reparse()
 
-Re-runs the parser stack on the current message. The function returns ``1`` on
+Re-runs the parser stack on the current message. Optionally, pass a string to
+replace the message's raw content before parsing. The function returns ``1`` on
 success and ``0`` if parsing fails.
 
 Examples
@@ -32,8 +33,7 @@ fields. This example updates the raw message directly before reparsing.
 .. code-block:: none
 
    if $rawmsg contains 'bad-string' then {
-     set $rawmsg = replace($rawmsg, 'bad-string', 'good-string');
-     if reparse() == 0 then {
+     if reparse(replace($rawmsg, 'bad-string', 'good-string')) == 0 then {
        # handle parse failures, e.g. send to a fallback file
      }
    }

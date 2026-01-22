@@ -16,8 +16,7 @@ input(type="imptcp" port="0" listenPortFileName="'$RSYSLOG_DYNNAME'.tcpflood_por
 if $rawmsg contains "bad-string" then {
   set $!foo = "old";
   set $.bar = "old";
-  set $rawmsg = replace($rawmsg, "bad-string", "good-string");
-  if reparse() == 0 then {
+  if reparse(replace($rawmsg, "bad-string", "good-string")) == 0 then {
     set $.reparse_failed = "1";
   }
 }
