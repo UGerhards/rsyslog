@@ -215,11 +215,7 @@ static void setLocalHostName(dnscache_entry_t *etry) {
     memcpy(hostbuf, fqdnLower, i);
     hostbuf[i] = '\0';
 
-    /* at this point, we have not found anything, so we again use the
-     * already-created complete full name property.
-     */
-    prop.AddRef(etry->fqdnLowerCase);
-    etry->localName = etry->fqdnLowerCase;
+    prop.CreateStringProp(&etry->localName, hostbuf, i);
 done:
     return;
 }
