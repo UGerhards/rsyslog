@@ -2744,7 +2744,9 @@ void ATTR_NONNULL() MsgTruncateToMaxSize(smsg_t *const pThis) {
 void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMsg, const size_t lenMsg) {
     ISOBJ_TYPE_assert(pThis, msg);
     int deltaSize;
-    if ((pThis->msgFlags & NEEDS_PARSING) == 0) {
+    const int wasParsed = (pThis->msgFlags & MSG_WAS_PARSED) != 0;
+
+    if (wasParsed) {
         msgResetParseState(pThis);
         pThis->msgFlags |= NEEDS_PARSING;
     }
@@ -2769,10 +2771,12 @@ void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMs
      * need for a costly re-parse in modules like mmexternal which may
      * replace the raw message text.
      */
-    if (pThis->iLenRawMsg > pThis->offMSG)
-        pThis->iLenMSG += deltaSize;
-    else
-        pThis->iLenMSG = 0;
+    if (!wasParsed) {
+        if (pThis->iLenRawMsg > pThis->offMSG)
+            pThis->iLenMSG += deltaSize;
+        else
+            pThis->iLenMSG = 0;
+    }
 }
 
 
