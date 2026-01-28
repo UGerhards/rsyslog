@@ -2631,6 +2631,51 @@ void MsgSetMSGoffs(smsg_t *const pMsg, int offs) {
     }
 }
 
+static void msgResetParseState(smsg_t *const pMsg) {
+    ISOBJ_TYPE_assert(pMsg, msg);
+
+    pMsg->bParseSuccess = 0;
+    pMsg->offAfterPRI = 0;
+    pMsg->offMSG = -1;
+    pMsg->iProtocolVersion = 0;
+    pMsg->iLenMSG = 0;
+    pMsg->iLenTAG = 0;
+    pMsg->iLenHOSTNAME = 0;
+    if (pMsg->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) {
+        free(pMsg->PROGNAME.ptr);
+    }
+    pMsg->iLenPROGNAME = -1;
+    pMsg->PROGNAME.ptr = NULL;
+
+    freeTAG(pMsg);
+    pMsg->TAG.pszTAG = NULL;
+
+    freeHOSTNAME(pMsg);
+    pMsg->pszHOSTNAME = NULL;
+
+    if (pMsg->pCSAPPNAME != NULL) rsCStrDestruct(&pMsg->pCSAPPNAME);
+    if (pMsg->pCSPROCID != NULL) rsCStrDestruct(&pMsg->pCSPROCID);
+    if (pMsg->pCSMSGID != NULL) rsCStrDestruct(&pMsg->pCSMSGID);
+
+    free(pMsg->pszStrucData);
+    pMsg->pszStrucData = NULL;
+    pMsg->lenStrucData = 0;
+
+    free(pMsg->pszTIMESTAMP_MySQL);
+    pMsg->pszTIMESTAMP_MySQL = NULL;
+    free(pMsg->pszTIMESTAMP_PgSQL);
+    pMsg->pszTIMESTAMP_PgSQL = NULL;
+
+    pMsg->pszTIMESTAMP3164 = NULL;
+    pMsg->pszTimestamp3164[0] = '\0';
+    pMsg->pszTIMESTAMP3339 = NULL;
+    pMsg->pszTimestamp3339[0] = '\0';
+    pMsg->pszTIMESTAMP_SecFrac[0] = '\0';
+    pMsg->pszTIMESTAMP_Unix[0] = '\0';
+
+    memcpy(&pMsg->tTIMESTAMP, &pMsg->tRcvdAt, sizeof(struct syslogTime));
+}
+
 
 /* replace the MSG part of a message. The update actually takes place inside
  * rawmsg.
@@ -2698,6 +2743,10 @@ void ATTR_NONNULL() MsgTruncateToMaxSize(smsg_t *const pThis) {
 void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMsg, const size_t lenMsg) {
     ISOBJ_TYPE_assert(pThis, msg);
     int deltaSize;
+    if ((pThis->msgFlags & NEEDS_PARSING) == 0) {
+        msgResetParseState(pThis);
+        pThis->msgFlags |= NEEDS_PARSING;
+    }
     if (pThis->pszRawMsg != pThis->szRawMsg) free(pThis->pszRawMsg);
 
     deltaSize = (int)lenMsg - pThis->iLenRawMsg; /* value < 0 in truncation case! */

@@ -501,6 +501,7 @@ finalize_it:
  */
 static rsRetVal ATTR_NONNULL(2, 3) scriptExec(struct cnfstmt *const root, smsg_t *const pMsg, wti_t *const pWti) {
     struct cnfstmt *stmt;
+    rsRetVal localRet;
     DEFiRet;
 
     for (stmt = root; stmt != NULL; stmt = stmt->next) {
@@ -509,6 +510,13 @@ static rsRetVal ATTR_NONNULL(2, 3) scriptExec(struct cnfstmt *const root, smsg_t
                 "scriptExec: ShutdownImmediate set, "
                 "force terminating\n");
             ABORT_FINALIZE(RS_RET_FORCE_TERM);
+        }
+        if ((pMsg->msgFlags & NEEDS_PARSING) != 0) {
+            localRet = parser.ParseMsg(pMsg);
+            if (localRet != RS_RET_OK) {
+                DBGPRINTF("Message discarded, parsing error %d\n", localRet);
+                ABORT_FINALIZE(RS_RET_DISCARDMSG);
+            }
         }
         if (Debug) {
             cnfstmtPrintOnly(stmt, 2, 0);
