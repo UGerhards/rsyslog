@@ -504,6 +504,10 @@ static rsRetVal ATTR_NONNULL(2, 3) scriptExec(struct cnfstmt *const root, smsg_t
     rsRetVal localRet;
     DEFiRet;
 
+    if (parser.ifIsLoaded == 0) {
+        CHKiRet(objUse(parser, CORE_COMPONENT));
+    }
+
     for (stmt = root; stmt != NULL; stmt = stmt->next) {
         if (*pWti->pbShutdownImmediate) {
             DBGPRINTF(

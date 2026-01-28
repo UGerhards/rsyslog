@@ -794,6 +794,9 @@ rsRetVal msgConstructForDeserializer(smsg_t **ppThis) {
 static inline void freeTAG(smsg_t *pThis) {
     if (pThis->iLenTAG >= CONF_TAG_BUFSIZE) free(pThis->TAG.pszTAG);
 }
+static inline void freePROGNAME(smsg_t *pThis) {
+    if (pThis->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) free(pThis->PROGNAME.ptr);
+}
 static inline void freeHOSTNAME(smsg_t *pThis) {
     if (pThis->iLenHOSTNAME >= CONF_HOSTNAME_BUFSIZE) free(pThis->pszHOSTNAME);
 }
@@ -2641,9 +2644,7 @@ static void msgResetParseState(smsg_t *const pMsg) {
     pMsg->iLenMSG = 0;
     pMsg->iLenTAG = 0;
     pMsg->iLenHOSTNAME = 0;
-    if (pMsg->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) {
-        free(pMsg->PROGNAME.ptr);
-    }
+    freePROGNAME(pMsg);
     pMsg->iLenPROGNAME = -1;
     pMsg->PROGNAME.ptr = NULL;
 
