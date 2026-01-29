@@ -515,7 +515,7 @@ static rsRetVal ATTR_NONNULL(2, 3) scriptExec(struct cnfstmt *const root, smsg_t
                 "force terminating\n");
             ABORT_FINALIZE(RS_RET_FORCE_TERM);
         }
-        if ((pMsg->msgFlags & NEEDS_PARSING) != 0) {
+        if ((pMsg->msgFlags & NEEDS_PARSING) != 0 && (pMsg->msgFlags & MSG_WAS_PARSED) != 0) {
             localRet = parser.ParseMsg(pMsg);
             if (localRet != RS_RET_OK) {
                 DBGPRINTF("Message discarded, parsing error %d\n", localRet);
