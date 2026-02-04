@@ -794,6 +794,9 @@ rsRetVal msgConstructForDeserializer(smsg_t **ppThis) {
 static inline void freeTAG(smsg_t *pThis) {
     if (pThis->iLenTAG >= CONF_TAG_BUFSIZE) free(pThis->TAG.pszTAG);
 }
+static inline void freePROGNAME(smsg_t *pThis) {
+    if (pThis->iLenPROGNAME >= CONF_PROGNAME_BUFSIZE) free(pThis->PROGNAME.ptr);
+}
 static inline void freeHOSTNAME(smsg_t *pThis) {
     if (pThis->iLenHOSTNAME >= CONF_HOSTNAME_BUFSIZE) free(pThis->pszHOSTNAME);
 }
@@ -2631,6 +2634,49 @@ void MsgSetMSGoffs(smsg_t *const pMsg, int offs) {
     }
 }
 
+static void msgResetParseState(smsg_t *const pMsg) {
+    ISOBJ_TYPE_assert(pMsg, msg);
+
+    pMsg->bParseSuccess = 0;
+    pMsg->offAfterPRI = 0;
+    pMsg->offMSG = -1;
+    pMsg->iProtocolVersion = 0;
+    pMsg->iLenMSG = 0;
+    pMsg->iLenTAG = 0;
+    pMsg->iLenHOSTNAME = 0;
+    freePROGNAME(pMsg);
+    pMsg->iLenPROGNAME = -1;
+    pMsg->PROGNAME.ptr = NULL;
+
+    freeTAG(pMsg);
+    pMsg->TAG.pszTAG = NULL;
+
+    freeHOSTNAME(pMsg);
+    pMsg->pszHOSTNAME = NULL;
+
+    if (pMsg->pCSAPPNAME != NULL) rsCStrDestruct(&pMsg->pCSAPPNAME);
+    if (pMsg->pCSPROCID != NULL) rsCStrDestruct(&pMsg->pCSPROCID);
+    if (pMsg->pCSMSGID != NULL) rsCStrDestruct(&pMsg->pCSMSGID);
+
+    free(pMsg->pszStrucData);
+    pMsg->pszStrucData = NULL;
+    pMsg->lenStrucData = 0;
+
+    free(pMsg->pszTIMESTAMP_MySQL);
+    pMsg->pszTIMESTAMP_MySQL = NULL;
+    free(pMsg->pszTIMESTAMP_PgSQL);
+    pMsg->pszTIMESTAMP_PgSQL = NULL;
+
+    pMsg->pszTIMESTAMP3164 = NULL;
+    pMsg->pszTimestamp3164[0] = '\0';
+    pMsg->pszTIMESTAMP3339 = NULL;
+    pMsg->pszTimestamp3339[0] = '\0';
+    pMsg->pszTIMESTAMP_SecFrac[0] = '\0';
+    pMsg->pszTIMESTAMP_Unix[0] = '\0';
+
+    memcpy(&pMsg->tTIMESTAMP, &pMsg->tRcvdAt, sizeof(struct syslogTime));
+}
+
 
 /* replace the MSG part of a message. The update actually takes place inside
  * rawmsg.
@@ -2698,6 +2744,12 @@ void ATTR_NONNULL() MsgTruncateToMaxSize(smsg_t *const pThis) {
 void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMsg, const size_t lenMsg) {
     ISOBJ_TYPE_assert(pThis, msg);
     int deltaSize;
+    const int wasParsed = (pThis->msgFlags & MSG_WAS_PARSED) != 0;
+
+    if (wasParsed) {
+        msgResetParseState(pThis);
+        pThis->msgFlags |= NEEDS_PARSING;
+    }
     if (pThis->pszRawMsg != pThis->szRawMsg) free(pThis->pszRawMsg);
 
     deltaSize = (int)lenMsg - pThis->iLenRawMsg; /* value < 0 in truncation case! */
@@ -2719,10 +2771,12 @@ void ATTR_NONNULL() MsgSetRawMsg(smsg_t *const pThis, const char *const pszRawMs
      * need for a costly re-parse in modules like mmexternal which may
      * replace the raw message text.
      */
-    if (pThis->iLenRawMsg > pThis->offMSG)
-        pThis->iLenMSG += deltaSize;
-    else
-        pThis->iLenMSG = 0;
+    if (!wasParsed) {
+        if (pThis->iLenRawMsg > pThis->offMSG)
+            pThis->iLenMSG += deltaSize;
+        else
+            pThis->iLenMSG = 0;
+    }
 }
 
 

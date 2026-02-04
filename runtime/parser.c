@@ -625,6 +625,7 @@ static rsRetVal ParseMsg(smsg_t *pMsg) {
     }
 
     /* "finalize" message object */
+    pMsg->msgFlags |= MSG_WAS_PARSED;
     pMsg->msgFlags &= ~NEEDS_PARSING; /* this message is now parsed */
 
 finalize_it:
