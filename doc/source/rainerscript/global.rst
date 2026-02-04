@@ -1,11 +1,18 @@
+.. meta::
+   :description: Global configuration parameters for rsyslog.
+   :keywords: rsyslog, global configuration, parameters
+
 global() configuration object
 =============================
 
+.. summary-start
 The global configuration object permits to set global parameters. Note
 that each parameter can only be set once and cannot be re-set
 thereafter. If a parameter is set multiple times, the behaviour is
 unpredictable. As with other configuration objects, parameters for this
 object are case-insensitive.
+.. summary-end
+
 
 The following parameters can be set:
 
@@ -492,6 +499,14 @@ The following parameters can be set:
   to warning messages. This can be done e.g. via::
 
     global(internalmsg.severity="warn")
+
+- **internalmsg.disablewarnings** [boolean (on/off)] available 8.2509.0+
+
+  **Default:** off
+
+  When enabled, rsyslog suppresses internal warning messages (LOG_WARNING).
+  This only affects warnings; errors and other severities are still emitted
+  according to the internalmsg.severity filter.
 
 - **errorMessagesToStderr.maxNumber** [positive integer] available 8.30.0+
 
