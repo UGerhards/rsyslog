@@ -208,6 +208,7 @@ static void cnfSetDefaults(rsconf_t *pThis) {
     pThis->globals.intMsgRateLimitItv = 5;
     pThis->globals.intMsgRateLimitBurst = 500;
     pThis->globals.intMsgsSeverityFilter = DFLT_INT_MSGS_SEV_FILTER;
+    pThis->globals.bDisableWarnings = 0;
     pThis->globals.permitCtlC = glblPermitCtlC;
 
     pThis->globals.actq_dflt_toQShutdown = 10;

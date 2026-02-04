@@ -141,6 +141,7 @@ struct globals_s {
     int intMsgRateLimitItv;
     int intMsgRateLimitBurst;
     int intMsgsSeverityFilter; /* filter for logging internal messages by syslog sev. */
+    int bDisableWarnings; /* suppress LOG_WARNING internal messages */
     int permitCtlC;
 
     int actq_dflt_toQShutdown; /* queue shutdown */

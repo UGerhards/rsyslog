@@ -84,6 +84,11 @@ static void doLogMsg(const int iErrno, const int iErrCode, const int severity, c
     char buf[2048];
     char errStr[1024];
 
+    const rsconf_t *const cnf = (runConf != NULL) ? runConf : loadConf;
+    if ((cnf != NULL) && (severity == LOG_WARNING) && cnf->globals.bDisableWarnings) {
+        return;
+    }
+
     dbgprintf("Called LogMsg, msg: %s\n", msg);
     osf_write(OSF_TAG_MSG, msg);
 
