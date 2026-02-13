@@ -330,6 +330,7 @@ TESTS_DEFAULT = \
 	rscript_re_match_i.sh \
 	rscript_re_match.sh \
 	rscript_re_match-dbl_quotes.sh \
+	rscript_unicode_escape.sh \
 	rscript_eq.sh \
 	rscript_eq_var.sh \
 	rscript_ge.sh \

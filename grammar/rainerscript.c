@@ -5932,59 +5932,129 @@ static int hexDigitVal(char c) {
     return r;
 }
 
+static void appendUtf8(unsigned int codepoint, unsigned char *c, int *iDst) {
+    if (codepoint > 0x10FFFF || (codepoint >= 0xD800 && codepoint <= 0xDFFF)) {
+        c[(*iDst)++] = '?';
+        return;
+    }
+
+    if (codepoint <= 0x7F) {
+        c[(*iDst)++] = codepoint;
+    } else if (codepoint <= 0x7FF) {
+        c[(*iDst)++] = 0xC0 | (codepoint >> 6);
+        c[(*iDst)++] = 0x80 | (codepoint & 0x3F);
+    } else if (codepoint <= 0xFFFF) {
+        c[(*iDst)++] = 0xE0 | (codepoint >> 12);
+        c[(*iDst)++] = 0x80 | ((codepoint >> 6) & 0x3F);
+        c[(*iDst)++] = 0x80 | (codepoint & 0x3F);
+    } else {
+        c[(*iDst)++] = 0xF0 | (codepoint >> 18);
+        c[(*iDst)++] = 0x80 | ((codepoint >> 12) & 0x3F);
+        c[(*iDst)++] = 0x80 | ((codepoint >> 6) & 0x3F);
+        c[(*iDst)++] = 0x80 | (codepoint & 0x3F);
+    }
+}
+
 /* Handle the actual unescaping.
  * a helper to unescapeStr(), to help make the function easier to read.
  */
-static void doUnescape(unsigned char *c, int len, int *iSrc, int iDst) {
+static void doUnescape(unsigned char *c, int len, int *iSrc, int *iDst) {
     if (c[*iSrc] == '\\') {
         if (++(*iSrc) == len) {
             /* error, incomplete escape, treat as single char */
-            c[iDst] = '\\';
+            c[(*iDst)++] = '\\';
+            return;
         }
         /* regular case, unescape */
         switch (c[*iSrc]) {
             case 'a':
-                c[iDst] = '\007';
+                c[(*iDst)++] = '\007';
                 break;
             case 'b':
-                c[iDst] = '\b';
+                c[(*iDst)++] = '\b';
                 break;
             case 'f':
-                c[iDst] = '\014';
+                c[(*iDst)++] = '\014';
                 break;
             case 'n':
-                c[iDst] = '\n';
+                c[(*iDst)++] = '\n';
                 break;
             case 'r':
-                c[iDst] = '\r';
+                c[(*iDst)++] = '\r';
                 break;
             case 't':
-                c[iDst] = '\t';
+                c[(*iDst)++] = '\t';
                 break;
             case '\'':
-                c[iDst] = '\'';
+                c[(*iDst)++] = '\'';
                 break;
             case '"':
-                c[iDst] = '"';
+                c[(*iDst)++] = '"';
                 break;
             case '?':
-                c[iDst] = '?';
+                c[(*iDst)++] = '?';
                 break;
             case '$':
-                c[iDst] = '$';
+                c[(*iDst)++] = '$';
                 break;
             case '\\':
-                c[iDst] = '\\';
+                c[(*iDst)++] = '\\';
                 break;
             case 'x':
                 if ((*iSrc) + 2 >= len || !isxdigit(c[(*iSrc) + 1]) || !isxdigit(c[(*iSrc) + 2])) {
                     /* error, incomplete escape, use as is */
-                    c[iDst] = '\\';
+                    c[(*iDst)++] = '\\';
                     --(*iSrc);
+                    break;
                 }
-                c[iDst] = (hexDigitVal(c[(*iSrc) + 1]) << 4) + hexDigitVal(c[(*iSrc) + 2]);
+                c[(*iDst)++] = (hexDigitVal(c[(*iSrc) + 1]) << 4) + hexDigitVal(c[(*iSrc) + 2]);
                 *iSrc += 2;
                 break;
+            case 'u':
+            case 'U': {
+                const int digits = c[*iSrc] == 'u' ? 4 : 8;
+                unsigned int codepoint = 0;
+                int j;
+
+                if ((*iSrc) + digits >= len) {
+                    c[(*iDst)++] = '\\';
+                    --(*iSrc);
+                    break;
+                }
+
+                for (j = 1; j <= digits; ++j) {
+                    if (!isxdigit(c[(*iSrc) + j])) {
+                        c[(*iDst)++] = '\\';
+                        --(*iSrc);
+                        break;
+                    }
+                    codepoint = (codepoint << 4) + hexDigitVal(c[(*iSrc) + j]);
+                }
+                if (j <= digits) {
+                    break;
+                }
+
+                if (c[*iSrc] == 'u' && codepoint >= 0xD800 && codepoint <= 0xDBFF && (*iSrc) + 10 < len &&
+                    c[(*iSrc) + 5] == '\\' && c[(*iSrc) + 6] == 'u') {
+                    unsigned int low = 0;
+                    int okLow = 1;
+                    for (j = 0; j < 4; ++j) {
+                        if (!isxdigit(c[(*iSrc) + 7 + j])) {
+                            okLow = 0;
+                            break;
+                        }
+                        low = (low << 4) + hexDigitVal(c[(*iSrc) + 7 + j]);
+                    }
+                    if (okLow && low >= 0xDC00 && low <= 0xDFFF) {
+                        codepoint = 0x10000 + ((codepoint - 0xD800) << 10) + (low - 0xDC00);
+                        *iSrc += 6;
+                    }
+                }
+
+                appendUtf8(codepoint, c, iDst);
+                *iSrc += digits;
+                break;
+            }
             case '0': /* octal escape */
             case '1':
             case '2':
@@ -5995,20 +6065,21 @@ static void doUnescape(unsigned char *c, int len, int *iSrc, int iDst) {
             case '7':
                 if ((*iSrc) + 2 >= len || !isodigit(c[(*iSrc) + 1]) || !isodigit(c[(*iSrc) + 2])) {
                     /* error, incomplete escape, use as is */
-                    c[iDst] = '\\';
+                    c[(*iDst)++] = '\\';
                     --(*iSrc);
+                    break;
                 }
-                c[iDst] = ((c[(*iSrc)] - '0') << 6) + ((c[(*iSrc) + 1] - '0') << 3) + (c[(*iSrc) + 2] - '0');
+                c[(*iDst)++] = ((c[(*iSrc)] - '0') << 6) + ((c[(*iSrc) + 1] - '0') << 3) + (c[(*iSrc) + 2] - '0');
                 *iSrc += 2;
                 break;
             default:
                 /* error, incomplete escape, indicate by '?' */
-                c[iDst] = '?';
+                c[(*iDst)++] = '?';
                 break;
         }
     } else {
         /* regular character */
-        c[iDst] = c[*iSrc];
+        c[(*iDst)++] = c[*iSrc];
     }
 }
 
@@ -6025,9 +6096,8 @@ void unescapeStr(uchar *s, int len) {
     if (iSrc != len) {
         iDst = iSrc;
         while (iSrc < len) {
-            doUnescape(s, len, &iSrc, iDst);
+            doUnescape(s, len, &iSrc, &iDst);
             ++iSrc;
-            ++iDst;
         }
         s[iDst] = '\0';
     }
