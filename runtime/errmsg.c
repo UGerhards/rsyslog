@@ -184,7 +184,9 @@ void __attribute__((format(printf, 4, 5))) LogMsg(
  */
 rsRetVal ATTR_NONNULL() writeOversizeMessageLog(const smsg_t *const pMsg) {
     struct json_object *json = NULL;
+    struct json_object *jsonMsg = NULL;
     char *rendered = NULL;
+    uchar *jsonMsgSerialized = NULL;
     struct json_object *jval;
     uchar *buf;
     size_t toWrite;
@@ -226,6 +228,34 @@ rsRetVal ATTR_NONNULL() writeOversizeMessageLog(const smsg_t *const pMsg) {
     jval = json_object_new_string((char *)buf);
     json_object_object_add(json, "input", jval);
 
+    jsonMsgSerialized = (uchar *)msgGetJSONMESG((smsg_t *)pMsg);
+    if (jsonMsgSerialized != NULL) {
+        jsonMsg = fjson_tokener_parse((char *)jsonMsgSerialized);
+        if (jsonMsg != NULL) {
+            if (json_object_object_get_ex(jsonMsg, "fromhost", &jval)) {
+                json_object_object_add(json, "fromhost", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "fromhost-ip", &jval)) {
+                json_object_object_add(json, "fromhost-ip", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "fromhost-port", &jval)) {
+                json_object_object_add(json, "fromhost-port", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "timereported", &jval)) {
+                json_object_object_add(json, "timereported", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "timegenerated", &jval)) {
+                json_object_object_add(json, "timegenerated", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "hostname", &jval)) {
+                json_object_object_add(json, "hostname", json_object_get(jval));
+            }
+            if (json_object_object_get_ex(jsonMsg, "syslogtag", &jval)) {
+                json_object_object_add(json, "syslogtag", json_object_get(jval));
+            }
+        }
+    }
+
     CHKmalloc(rendered = strdup((char *)fjson_object_to_json_string(json)));
 
     toWrite = strlen(rendered) + 1;
@@ -241,8 +271,12 @@ rsRetVal ATTR_NONNULL() writeOversizeMessageLog(const smsg_t *const pMsg) {
 
 finalize_it:
     free(rendered);
+    free(jsonMsgSerialized);
     if (mutexLocked) {
         pthread_mutex_unlock(&oversizeMsgLogMut);
+    }
+    if (jsonMsg != NULL) {
+        fjson_object_put(jsonMsg);
     }
     if (json != NULL) {
         fjson_object_put(json);
