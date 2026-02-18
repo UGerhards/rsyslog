@@ -26,6 +26,11 @@ The message "as is". Should be useful for debugging and also if a message should
 be forwarded totally unaltered. Please notice *EscapecontrolCharactersOnReceive*
 is enabled by default, so it may be different from what was received in the
 socket.
+When you overwrite ``rawmsg`` in a ruleset (for example via ``set`` or an
+external module), rsyslog marks the message for re-parsing and runs the parser
+stack again before the next statement executes. This refreshes derived
+properties (timestamp, hostname, program name, and similar fields) to match the
+new raw message.
 
 Usage
 -----
