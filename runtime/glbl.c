@@ -175,6 +175,7 @@ static struct cnfparamdescr cnfparamdescr[] = {
     {"internalmsg.ratelimit.interval", eCmdHdlrPositiveInt, 0},
     {"internalmsg.ratelimit.burst", eCmdHdlrPositiveInt, 0},
     {"internalmsg.severity", eCmdHdlrSeverity, 0},
+    {"internalmsg.disablewarnings", eCmdHdlrBinary, 0},
     {"allmessagestostderr", eCmdHdlrBinary, 0},
     {"errormessagestostderr.maxnumber", eCmdHdlrPositiveInt, 0},
     {"shutdown.enable.ctlc", eCmdHdlrBinary, 0},
@@ -1366,6 +1367,8 @@ rsRetVal glblDoneLoadCnf(void) {
                 parser_errmsg("invalid internalmsg.severity value");
                 loadConf->globals.intMsgsSeverityFilter = DFLT_INT_MSGS_SEV_FILTER;
             }
+        } else if (!strcmp(paramblk.descr[i].name, "internalmsg.disablewarnings")) {
+            loadConf->globals.bDisableWarnings = (int)cnfparamvals[i].val.d.n;
         } else if (!strcmp(paramblk.descr[i].name, "environment")) {
             for (int j = 0; j < cnfparamvals[i].val.d.ar->nmemb; ++j) {
                 char *const var = es_str2cstr(cnfparamvals[i].val.d.ar->arr[j], NULL);

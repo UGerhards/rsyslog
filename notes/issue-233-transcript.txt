@@ -1,0 +1,11 @@
+Issue: https://github.com/rsyslog/rsyslog/issues/233
+
+Title: add config option to disable output of warnings
+State: open
+Labels: enhancement, small
+Author: rgerhards
+Created: 2015-01-29T11:08:28Z
+
+Body:
+This requires that warnings are differentiated from errors, something that makes sense in any case.
+In the current (8.7.0) codebase, there is no such difference (for historical reasons) except inside the message text.
